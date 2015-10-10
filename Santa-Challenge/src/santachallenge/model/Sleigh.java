@@ -6,40 +6,49 @@
 package santachallenge.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
  * @author Jordan
  */
 public class Sleigh implements Serializable{
-    private String speed;
-    private double description;
+    private double speed;
+    private double weight;
+    private double size;
 
-    public String getSpeed() {
+    public Sleigh() {
+    }
+
+    public double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(String speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
-    public double getDescription() {
-        return description;
+    public double getWeight() {
+        return weight;
     }
 
-    public void setDescription(double description) {
-        this.description = description;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
-    public Sleigh() {
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.speed);
-        hash = 23 * hash + (int) (Double.doubleToLongBits(this.description) ^ (Double.doubleToLongBits(this.description) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.speed) ^ (Double.doubleToLongBits(this.speed) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.weight) ^ (Double.doubleToLongBits(this.weight) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.size) ^ (Double.doubleToLongBits(this.size) >>> 32));
         return hash;
     }
 
@@ -52,18 +61,18 @@ public class Sleigh implements Serializable{
             return false;
         }
         final Sleigh other = (Sleigh) obj;
-        if (!Objects.equals(this.speed, other.speed)) {
+        if (Double.doubleToLongBits(this.speed) != Double.doubleToLongBits(other.speed)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.description) != Double.doubleToLongBits(other.description)) {
+        if (Double.doubleToLongBits(this.weight) != Double.doubleToLongBits(other.weight)) {
             return false;
         }
-        return true;
+        return Double.doubleToLongBits(this.size) == Double.doubleToLongBits(other.size);
     }
 
     @Override
     public String toString() {
-        return "Sleigh{" + "speed=" + speed + ", description=" + description + '}';
+        return "Sleigh{" + "speed=" + speed + ", weight=" + weight + ", size=" + size + '}';
     }
-    
+
 }

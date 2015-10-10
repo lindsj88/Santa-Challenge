@@ -13,33 +13,37 @@ import java.util.Objects;
  * @author Jordan
  */
 public class Inventory implements Serializable {
-    private String item;
-    private double description;
-
-    public String getItem() {
-        return item;
-    }
-
-    public void setItem(String item) {
-        this.item = item;
-    }
-
-    public double getDescription() {
-        return description;
-    }
-
-    public void setDescription(double description) {
-        this.description = description;
-    }
+    
+    //class instance variables
+    private String description;
+    private double quantity;
 
     public Inventory() {
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
+        
+  
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 11 * hash + Objects.hashCode(this.item);
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.description) ^ (Double.doubleToLongBits(this.description) >>> 32));
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.quantity) ^ (Double.doubleToLongBits(this.quantity) >>> 32));
         return hash;
     }
 
@@ -52,10 +56,10 @@ public class Inventory implements Serializable {
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (!Objects.equals(this.item, other.item)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.description) != Double.doubleToLongBits(other.description)) {
+        if (Double.doubleToLongBits(this.quantity) != Double.doubleToLongBits(other.quantity)) {
             return false;
         }
         return true;
@@ -63,8 +67,8 @@ public class Inventory implements Serializable {
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", description=" + description + '}';
+        return "Inventory{" + "description=" + description + ", quantity=" + quantity + '}';
     }
-    
-    
 }
+
+   

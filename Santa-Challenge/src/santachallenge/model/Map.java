@@ -13,33 +13,33 @@ import java.util.Objects;
  * @author Jordan
  */
 public class Map implements Serializable {
-    private String Location;
-    private double descripion;
-
-    public String getLocation() {
-        return Location;
-    }
-
-    public void setLocation(String Location) {
-        this.Location = Location;
-    }
-
-    public double getDescripion() {
-        return descripion;
-    }
-
-    public void setDescripion(double descripion) {
-        this.descripion = descripion;
-    }
+    private String name;
+    private double distance;
 
     public Map() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.Location);
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.descripion) ^ (Double.doubleToLongBits(this.descripion) >>> 32));
+        hash = 13 * hash + Objects.hashCode(this.name);
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
         return hash;
     }
 
@@ -52,10 +52,10 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.Location, other.Location)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.descripion) != Double.doubleToLongBits(other.descripion)) {
+        if (Double.doubleToLongBits(this.distance) != Double.doubleToLongBits(other.distance)) {
             return false;
         }
         return true;
@@ -63,8 +63,6 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "Location=" + Location + ", descripion=" + descripion + '}';
+        return "Map{" + "name=" + name + ", distance=" + distance + '}';
     }
-    
-    
 }

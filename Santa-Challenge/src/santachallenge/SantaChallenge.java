@@ -6,10 +6,10 @@
 package santachallenge;
 
 import santachallenge.model.Game;
-import santachallenge.model.Player;
 import santachallenge.model.Inventory;
 import santachallenge.model.Location;
 import santachallenge.model.Map;
+import santachallenge.model.Player;
 import santachallenge.model.Presents;
 import santachallenge.model.Reindeer;
 import santachallenge.model.Santa;
@@ -25,13 +25,13 @@ public class SantaChallenge {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Game playerOne = new Game ();
+        Game gameOne = new Game ();
     
-            playerOne.setPlayerName("Lindsey");
-            playerOne.setTime(7.00);
+            gameOne.setPlayerName("Lindsey");
+            gameOne.setTime(7.00);
 
-            String playerInfo=playerOne.toString();
-            System.out.println(playerInfo);
+            String gameInfo = gameOne.toString();
+            System.out.println(gameInfo);
         
         Presents presentsOne = new Presents ();
            
@@ -64,9 +64,38 @@ public class SantaChallenge {
             
             String santaInfo = santaOne.toString();
             System.out.println(santaInfo);
-    }
+            
+        Inventory inventoryOne = new Inventory ();
+            
+            inventoryOne.setDescription("hat");
+            inventoryOne.setQuantity(1);
+            
+            String inventoryInfo = inventoryOne.toString();
+            System.out.println(inventoryInfo);
+    
+        Player playerOne = new Player ();
+            
+            playerOne.setName("Lindsey");
+            playerOne.setBestTime(10);
+            
+            String playerInfo = playerOne.toString();
+            System.out.println(playerInfo);
+            
+        Map mapOne = new Map ();
+            
+            mapOne.setName("Los Angeles");
+            mapOne.setDistance(2000);
+            
+            String mapInfo = mapOne.toString();
+            System.out.println(mapInfo);
+            
+        Sleigh sleighOne = new Sleigh ();
+            
+            sleighOne.setSize(200);
+            sleighOne.setSpeed(300);
+            sleighOne.setWeight(400);
+            
+            String sleighInfo = sleighOne.toString();
+            System.out.println(sleighInfo);
+    } 
 }
-    
-    
-    
-    
