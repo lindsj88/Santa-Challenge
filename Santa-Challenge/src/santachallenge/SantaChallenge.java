@@ -6,6 +6,10 @@
 package santachallenge;
 
 import santachallenge.model.Game;
+import santachallenge.model.Player;
+import santachallenge.model.Inventory;
+import santachallenge.model.Map;
+import santachallenge.model.Sleigh;
 
 /**
  *
@@ -19,15 +23,14 @@ public class SantaChallenge {
     public static void main(String[] args) {
         Game playerOne = new Game ();
     
-    
-
-    
-
 playerOne.setPlayerName("Lindsey");
 playerOne.setTime(7.00);
 
 String playerInfo=playerOne.toString();
 System.out.println(playerInfo);
 
-}
-}
+
+        
+    }
+    
+    
