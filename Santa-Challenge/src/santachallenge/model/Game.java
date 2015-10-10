@@ -15,6 +15,9 @@ public class Game implements Serializable{
     private double time;
     private String playerName;
 
+    public Game() {
+    }
+
     public double getTime() {
         return time;
     }
@@ -62,10 +65,5 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "time=" + time + ", playerName=" + playerName + '}';
-    }
-
-    public Game() {
-    }
-    
-    
+    } 
 }
