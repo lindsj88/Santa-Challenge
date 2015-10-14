@@ -14,6 +14,8 @@ import santachallenge.model.Presents;
 import santachallenge.model.Reindeer;
 import santachallenge.model.Santa;
 import santachallenge.model.Sleigh;
+import santachallenge.model.santasHouse;
+import santachallenge.model.workShop;
 
 /**
  *
@@ -97,5 +99,19 @@ public class SantaChallenge {
             
             String sleighInfo = sleighOne.toString();
             System.out.println(sleighInfo);
+            
+        santasHouse santasHouseOne = new santasHouse ();
+            santasHouseOne.setActivity("breakfast");
+            santasHouseOne.setDescription("choose food");
+            
+            String santasHouseInfo = santasHouseOne.toString();
+            System.out.println(santasHouseInfo);
+            
+         workShop workShopOne = new workShop ();
+            workShopOne.setActivity("reindeer");
+            workShopOne.setDescription("pick reindeer");
+            
+            String workShopInfo = workShopOne.toString();
+            System.out.println(workShopInfo);
     } 
 }
