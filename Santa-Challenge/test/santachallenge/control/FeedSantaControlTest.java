@@ -24,19 +24,23 @@ public class FeedSantaControlTest {
     public void testIsSantaFull() {
         System.out.println("IsSantaFull");
         
-        /***************************
-         * Test case #1
-         ***************************/
+        /*************************
+         * test case 1
+         *************************/
+        System.out.println("\tTest case 1");
         
-        //input value for test caase #1
-        double calories = 2200;
+        //input values for test 1
+        double calories = 2200.0;
+        double age = 65.0;
         
         FeedSantaControl instance = new FeedSantaControl();
         
-        double expResult = 0;
+        double expResult = 16.25;
         
-        double result = instance.IsSantaFull(calories);
+        //call function to run test
+        double result = instance.IsSantaFull(calories, age);
         
+        //compare expected return valuewith actual return value
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

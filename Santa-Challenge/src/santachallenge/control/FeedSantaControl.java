@@ -11,20 +11,22 @@ package santachallenge.control;
  */
 public class FeedSantaControl {
    
-    public double IsSantaFull(double calories) {
+    public double IsSantaFull(double calories, double age) {
         
         
-     if (calories >= needed) {
-       return 0;
-     }
-    
-    else {
-        return -1;
+     if (calories < 2200) {
+       return -1;
      }
      
-     double needed = 2200;
+     if (age < 0 || age > 100) {
+         return -1;
+
+     }
      
-     return calories;
+     double needed = 10 * 136 + 6.25 * 183 - 5 * age + 5;
+     double total = calories - needed;
+     
+     return total;
      
     }
    
