@@ -12,39 +12,33 @@ import static org.junit.Assert.*;
  *
  * @author Lindsey
  */
-public class FeedSantaControlTest {
+public class FlyingSpeedControlTest {
     
-    public FeedSantaControlTest() {
+    public FlyingSpeedControlTest() {
     }
 
     /**
-     * Test of IsSantaFull method, of class FeedSantaControl.
+     * Test of FlyingSpeed method, of class FlyingSpeedControl.
      */
     @Test
-    public void testIsSantaFull() {
-        System.out.println("IsSantaFull");
+    public void testFlyingSpeed() {
+        System.out.println("FlyingSpeed");
         
         /*************************
          * test case 1
          *************************/
         System.out.println("\tTest case 1");
         
-        //input values for test 1
-        double calories = 1000;
-        double age = 20;
+        double speed = 75.0;
         
-        double expResult = -1;
+        FlyingSpeedControl instance = new FlyingSpeedControl();
         
-        FeedSantaControl instance = new FeedSantaControl();
+        double expResult = 23.0;
         
-        
-        //call function to run test
-        double result = instance.IsSantaFull(calories, age);
-        
-        //compare expected return valuewith actual return value
+        double result = instance.FlyingSpeed(speed);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }

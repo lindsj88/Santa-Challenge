@@ -9,25 +9,22 @@ package santachallenge.control;
  *
  * @author Lindsey
  */
-public class FeedSantaControl {
-   
-    public double IsSantaFull(double calories, double age) {
-        
-        
-     if (calories < 2000) {
+public class FlyingSpeedControl {
+    
+    public double FlyingSpeed (double speed) {
+        if (speed < 50) {
        return -1;
      }
      
-     if (age < 0 || age > 100) {
+     if (speed >= 100) {
          return -1;
 
      }
      
-     double needed = 10 * 136 + 6.25 * 183 - 5 * age + 5;
-     double total = calories - needed;
+     double duration = 1000 * 25 / speed / 14;
+     double flyingDuration = Math.round(duration * 100)/100;
      
-     return total;
+     return flyingDuration;
      
     }
-   
 }
