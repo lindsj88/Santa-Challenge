@@ -29,7 +29,7 @@ public class FlyingSpeedControlTest {
          *************************/
         System.out.println("\tTest case 1");
         
-        double speed = 75.0;
+        double speed = 75;
         
         FlyingSpeedControl instance = new FlyingSpeedControl();
         
