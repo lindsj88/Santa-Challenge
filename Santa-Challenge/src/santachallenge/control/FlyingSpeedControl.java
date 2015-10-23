@@ -16,7 +16,7 @@ public class FlyingSpeedControl {
        return -1;
      }
      
-     if (speed >= 100) {
+     if (speed > 100) {
          return -1;
 
      }

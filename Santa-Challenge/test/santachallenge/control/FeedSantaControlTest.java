@@ -44,7 +44,7 @@ public class FeedSantaControlTest {
         //compare expected return valuewith actual return value
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
         
          /*************************
          * test case 2
@@ -189,6 +189,9 @@ public class FeedSantaControlTest {
         
         //compare expected return valuewith actual return value
         assertEquals(expResult, result, 0.0);
+        
+        
     }
+    
     
 }
