@@ -10,5 +10,20 @@ package santachallenge.control;
  * @author Lindsey
  */
 public class LoadSleighControl {
-    
+     public double SledWeight (double weight, double reindeerNumber) {
+        if (weight > 800) {
+       return -1;
+     }
+     
+     if (weight < 0) {
+         return -1;
+
+     }
+     
+     double reindeerStrength = 100 *  reindeerNumber;
+     double liftOff = 800 + 500 - reindeerStrength;
+     
+     return liftOff;
+     
+    }
 }
