@@ -5,10 +5,17 @@
  */
 package santachallenge.control;
 
+import santachallenge.model.Player;
+
 /**
  *
  * @author Lindsey
  */
-public class GameControl {
+public class ProgramControl {
+
+    public static Player createPlayer(String playersName) {
+        System.out.println("\n**** createPlayer function called ****");
+        return null;
+    }
     
 }
