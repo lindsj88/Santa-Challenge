@@ -21,6 +21,7 @@ public class MainMenuView {
                + "\n         Main Menu          "
                + "\n----------------------------"
                + "\nG - Start game"
+               + "\nC - Continue Saved game"
                + "\nH - Get help on how to play the game"
                + "\nS - Save game"
                + "\nE - Exit"
@@ -45,7 +46,7 @@ public class MainMenuView {
         
         boolean valid = false; //if menu selection has been retrieved
         char  selection = ' ';
-        String input = null;
+        String input= null;
         Scanner keyboard = new Scanner(System.in);
         
         while(!valid) { //while valid menu selection hasnt been retrieved
@@ -72,6 +73,9 @@ public class MainMenuView {
             case 'G': //start new game
                 this.startNewGame();
                 break;
+            case 'C': //continue saved game
+                this.continueGame();
+                break;
             case 'H': //help menu
                 this.displayHelpMenu();
                 break;
@@ -84,21 +88,25 @@ public class MainMenuView {
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
-}
-        private void startNewGame() {
-            GameControl.createNewGame(SantaChallenge.getPlayer());
-            
-            // create new game menu
-            GameMenuView gameMenu = new GameMenuView();
-            gameMenu.displayMenu;
-        }
-        private void displaySaveGame() {
-            System.out.println("*** saveGame function called***");
     }
-        private void displayHelpMenu() {
-            System.out.println("***Help Menu function called***");
-}
-        private void displaySaveGame() {
-        System.out.println("***Save game function called***");      
-}
-}
+    
+    private void startNewGame() {
+        GameControl.createNewGame(SantaChallenge.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+        //System.out.println("*** continueGame function called***");
+    }
+    
+    private void continueGame() {
+        System.out.println("*** continueGame function called***");
+    }
+    
+    private void displayHelpMenu() {
+         System.out.println("*** displayHelpMenu function called***");
+    }
+    
+    private void displaySaveGame() {
+         System.out.println("*** displaySaveGame function called***");
+    }
+    }
