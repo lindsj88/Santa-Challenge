@@ -6,6 +6,9 @@
 package santachallenge.view;
 
 import java.util.Scanner;
+import santachallenge.SantaChallenge;
+import santachallenge.control.GameControl;
+import santachallenge.control.ProgramControl;
 
 /**
  *
@@ -15,7 +18,8 @@ public class MainMenuView {
 
     private final String MENU = "\n"
                + "\n----------------------------"
-               + "\n| Main Menu                 "
+               + "\n         Main Menu          "
+               + "\n----------------------------"
                + "\nG - Start game"
                + "\nH - Get help on how to play the game"
                + "\nS - Save game"
@@ -24,6 +28,7 @@ public class MainMenuView {
 
     
    public void displayMenu() {
+       
        char selection = ' ';
        do {
            System.out.println(MENU);
@@ -34,64 +39,66 @@ public class MainMenuView {
            this.doAction(selection);
            
        }   while (selection != 'E');
-       }    
+   }
 
     private String getInput() {
-
-            boolean valid = false; 
-            char selection =' ';
-        String getInput = null;
+        
+        boolean valid = false; //if menu selection has been retrieved
+        char  selection = ' ';
+        String input = null;
         Scanner keyboard = new Scanner(System.in);
         
-        while(!valid) {
-            System.out.println("Enter Menu selection:");
-            getInput = keyboard.nextLine();
-            getInput = getInput.trim();
-            selection = getInput.charAt(0);
+        while(!valid) { //while valid menu selection hasnt been retrieved
             
+            System.out.println("Please enter a menu selection:");
             
-            if (selection != 'G' || selection != 'H' || selection != 'S' || selection != 'E') {
+            //get menu selection from keyboard and trim off extra spaces
+            input = keyboard.nextLine();
+            input = input.trim();
+            selection = input.charAt(0);
+            
+            //if selection is invalid
+            if (selection != 'G' && selection != 'H' && selection != 'S' && selection != 'E') {
                 System.out.println("Invalid menu entry");
                 continue;
             }
             break;
             }
-        return getInput;    }
+        return input;   
+    }
     
-    public void doAction(char choice){
-        switch(choice){
-            case 'G':
+    public void doAction(char selection){
+        switch (selection){
+            case 'G': //start new game
                 this.startNewGame();
                 break;
-            case 'H':
+            case 'H': //help menu
                 this.displayHelpMenu();
                 break;
-            case 'S':
+            case 'S': //save game
                 this.displaySaveGame();
                 break;
-            case 'E':
+            case 'E': //exit
                 return;
             default:
                 System.out.println("\n***Invalid Selection***");
                 break;
-                
         }
-        
-        private void startNewGame();{
-        System.out.println("***Start game function called***");
 }
-        private void displayHelpMenu();{
-        System.out.println("***Help Menu function called***");
+        private void startNewGame() {
+            GameControl.createNewGame(SantaChallenge.getPlayer());
+            
+            // create new game menu
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.displayMenu;
+        }
+        private void displaySaveGame() {
+            System.out.println("*** saveGame function called***");
+    }
+        private void displayHelpMenu() {
+            System.out.println("***Help Menu function called***");
 }
-        private void displaySaveGame();{
-        System.out.println("***Save game function called***");
+        private void displaySaveGame() {
+        System.out.println("***Save game function called***");      
 }
-       
 }
-    
-
-    
-   
-    
-        
-

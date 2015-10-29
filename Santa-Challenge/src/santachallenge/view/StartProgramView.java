@@ -20,9 +20,13 @@ public class StartProgramView {
         
         //Display the banner screen
         this.displayBanner();
-            this.displayWelcomeMessage(player);
-MainMenuView mainMenu = new MainMenuView ();
-    mainMenu.displayMenu();
+        
+        //display welcome message
+        this.displayWelcomeMessage(player);
+        
+        //display main menu
+        MainMenuView mainMenu = new MainMenuView ();
+        mainMenu.displayMenu();
     }
 
     private void displayBanner() {
@@ -39,18 +43,22 @@ MainMenuView mainMenu = new MainMenuView ();
     
 
     private String getPlayersName() {
-        boolean valid = false; 
+        boolean valid = false; //if name has been retrieved
         String playersName = null;
         Scanner keyboard = new Scanner(System.in);
         
-        while(!valid) {
-            System.out.println("Enter the player's name below:");
+        while(!valid) { //while valid name hasnt been retrieved
+            
+            System.out.println("Enter the player's name:");
+            
+            //get name from keyboard and trim off extra spaces
             playersName = keyboard.nextLine();
             playersName = playersName.trim();
             
+            //if names invalid
             if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
-                continue;
+                System.out.println("Please enter a valid name");
+                continue; //repeat
             }
             break;
             }

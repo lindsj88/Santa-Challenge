@@ -23,5 +23,4 @@ public class ProgramControl {
         SantaChallenge.setPlayer (player);
         return player;
     }
-    
 }
