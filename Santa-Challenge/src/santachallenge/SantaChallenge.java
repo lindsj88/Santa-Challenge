@@ -23,6 +23,24 @@ import santachallenge.view.StartProgramView;
  * @author Jordan
  */
 public class SantaChallenge {
+    private static Game currentGame = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        SantaChallenge.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        SantaChallenge.player = player;
+    }
+    private static Player player = null;
 
     /**
      * @param args the command line arguments

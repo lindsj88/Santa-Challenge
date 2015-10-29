@@ -21,7 +21,8 @@ public class StartProgramView {
         //Display the banner screen
         this.displayBanner();
             this.displayWelcomeMessage(player);
-
+MainMenuView mainMenu = new MainMenuView ();
+    mainMenu.displayMenu();
     }
 
     private void displayBanner() {
@@ -67,6 +68,8 @@ public class StartProgramView {
         System.out.println("*We hope you have a lot of fun!");
         System.out.println("*==========================*");
 
-}
-}
 
+    
+    
+}
+}
