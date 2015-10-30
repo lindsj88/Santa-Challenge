@@ -11,7 +11,18 @@ package santachallenge.view;
  */
 public class GameMenuView {
     
-    void displayMenu() {
+    private final String MENU = "\n"
+               + "\n----------------------------"
+               + "\n         Game Play Menu          "
+               + "\n----------------------------"
+               + "\nV - View Map"
+               + "\nM - Move Santa"
+               + "\nL - Load Sleigh"
+               + "\nC - Choose Santa"
+               + "\nE - Exit"
+               + "\n----------------------------";
+    
+    public void displayMenu() {
         System.out.println("\n*** displayMenu stub function called***");
     }
 }
