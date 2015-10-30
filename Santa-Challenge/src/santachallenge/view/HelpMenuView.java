@@ -8,30 +8,27 @@ package santachallenge.view;
 import java.util.Scanner;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
-import santachallenge.control.ProgramControl;
-import santachallenge.view.HelpMenuView;
 
 /**
  *
- * @author Jordan
+ * @author Lindsey
  */
-public class MainMenuView {
-
-    private final String MENU = "\n"
+public class HelpMenuView {
+     private final String MENU = "\n"
                + "\n----------------------------"
-               + "\n         Main Menu          "
+               + "\n         Help Menu          "
                + "\n----------------------------"
-               + "\nG - Start game"
-               + "\nC - Continue Saved game"
-               + "\nH - Get help on how to play the game"
-               + "\nS - Save game"
+               + "\nW - How to win" 
+               + "\nM - Map and locations"
+               + "\nF - Feed Santa"
+               + "\nL - Load sleigh" 
+               + "\nC - Change location"
+               + "\nR - Return to main"
                + "\nE - Exit"
                + "\n----------------------------";
-
     
-   public void displayMenu() {
-       
-       char selection = ' ';
+public void displayMenu(){
+    char selection = ' ';
        do {
            System.out.println(MENU);
            
@@ -60,7 +57,8 @@ public class MainMenuView {
             selection = input.charAt(0);
             
             //if selection is invalid
-            if (selection != 'G' && selection != 'H' && selection != 'S' && selection != 'E') {
+            if (selection != 'W' && selection != 'M' && selection != 'F' && selection != 'L'
+                    && selection != 'C' && selection != 'R' && selection != 'E') {
                 System.out.println("Invalid menu entry");
                 continue;
             }
@@ -71,17 +69,23 @@ public class MainMenuView {
     
     public void doAction(char selection){
         switch (selection){
-            case 'G': //start new game
-                this.startNewGame();
+            case 'W': //start new game
+                this.displayHowToWin();
                 break;
-            case 'C': //continue saved game
-                this.continueGame();
+            case 'M': //continue saved game
+                this.displayMap();
                 break;
-            case 'H': //help menu
-                this.displayHelpMenu();
+            case 'F': //help menu
+                this.displayFeed();
                 break;
-            case 'S': //save game
-                this.displaySaveGame();
+            case 'L': //save game
+                this.displayLoad();
+                break;
+             case 'C': //save game
+                this.displayChangeLocation();
+                break;
+            case 'R': //save game
+                this.displayReturnToMain();
                 break;
             case 'E': //exit
                 return;
@@ -91,25 +95,29 @@ public class MainMenuView {
         }
     }
     
-    private void startNewGame() {
-        GameControl.createNewGame(SantaChallenge.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-        //System.out.println("*** continueGame function called***");
+    private void displayHowToWin() {
+        System.out.println("*** Help Santa deliver all the presents!***");
     }
     
-    private void continueGame() {
-        System.out.println("*** continueGame function called***");
+    private void displayMap() {
+        System.out.println("*** displayMap function called***");
     }
     
-    private void displayHelpMenu() {
-        //show help menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+    private void displayFeed() {
+         System.out.println("*** displayfeed function called***");
     }
     
-    private void displaySaveGame() {
-         System.out.println("*** displaySaveGame function called***");
+    private void displayLoad() {
+         System.out.println("*** displayLoad function called***");
     }
+    
+    private void displayChangeLocation() {
+        System.out.println("*** displayChangeLocation function called***");
+    }
+    
+    private void displayReturnToMain() {
+        System.out.println("*** displayReturnToMenu function called***");
 }
+}
+
+
