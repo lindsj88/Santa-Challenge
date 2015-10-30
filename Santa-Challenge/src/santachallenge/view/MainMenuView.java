@@ -8,8 +8,6 @@ package santachallenge.view;
 import java.util.Scanner;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
-import santachallenge.control.ProgramControl;
-import santachallenge.view.HelpMenuView;
 
 /**
  *

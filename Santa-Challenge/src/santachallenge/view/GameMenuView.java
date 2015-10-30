@@ -5,6 +5,8 @@
  */
 package santachallenge.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Lindsey
@@ -52,7 +54,7 @@ public class GameMenuView {
             selection = input.charAt(0);
             
             //if selection is invalid
-            if (selection != 'V' && selection != 'M' && selection != 'L' &&
+            if (selection != 'V' && selection != 'M' && selection != 'L'
                     && selection != 'C' && selection != 'E') {
                 System.out.println("Invalid menu entry");
                 continue;
@@ -101,9 +103,6 @@ public class GameMenuView {
     private void displayChooseSanta() {
          System.out.println("*** displayChooseSanta function called***");
     }
-    
-    
-    
     
     private void displayReturnToMain() {
         System.out.println("*** displayReturnToMenu function called***");
