@@ -5,6 +5,8 @@
  */
 package santachallenge.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Jordan
@@ -71,18 +73,19 @@ public class MapView {
             selection = input.charAt(0);
             
             //if selection is invalid
-            if (
-                    selection != 'A' && selection != 'B' && selection != 'C'
-                    && selection != 'D' && selection != 'E' && selection != 'F'
-                    selection != 'G' && selection != 'H' && selection != 'I'
-                    && selection != 'J' && selection != 'K' && selection != 'L'
-                    selection != 'M' && selection != 'N' && selection != 'O'
-                    && selection != 'P' && selection != 'Q' && selection != 'R'
-                    selection != 'S' && selection != 'T' && selection != 'U'
-                    && selection != 'V' && selection != 'W' && selection != 'X'
-                            && selection != 'Y'
-                    
-                    ) {
+            if (selection != 'A' && selection != 'B' && selection != 'C' 
+                    && selection != 'D' && selection != 'E' 
+                    && selection != 'F' && selection != 'G' 
+                    && selection != 'H' && selection != 'I'
+                    && selection != 'J' && selection != 'K' 
+                    && selection != 'L' && selection != 'M' 
+                    && selection != 'N' && selection != 'O'
+                    && selection != 'P' && selection != 'Q' 
+                    && selection != 'R' && selection != 'S' 
+                    && selection != 'T' && selection != 'U'
+                    && selection != 'V' && selection != 'W' 
+                    && selection != 'X'
+                            && selection != 'Y') {
                 System.out.println("Invalid menu entry");
                 continue;
             }
@@ -197,5 +200,9 @@ public class MapView {
 
     private void displaySelectInventory() {
         System.out.println("*** displaySelectInventory function called***");
+    }
+
+    private void displayNorthPole() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
