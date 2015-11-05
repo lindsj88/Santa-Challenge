@@ -112,7 +112,9 @@ public class GameMenuView {
 }
 
     private void displaySelectInventory() {
-        System.out.println("*** displaySelectInventory function called***");
+        //System.out.println("*** displaySelectInventory function called***");
+        SelectInventoryView inventoryMenu = new SelectInventoryView();
+        inventoryMenu.displayMenu();
     }
 }
     
