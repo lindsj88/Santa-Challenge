@@ -6,22 +6,23 @@
 package santachallenge.view;
 
 import java.util.Scanner;
+import santachallenge.SantaChallenge;
+import santachallenge.control.GameControl;
 
 /**
  *
  * @author Lindsey
  */
-public class GameMenuView {
-    
+public class SelectInventoryView {
     private final String MENU = "\n"
                + "\n----------------------------"
-               + "\n         Game Play Menu          "
+               + "\n         Select a Resource Menu          "
                + "\n----------------------------"
-               + "\nV - View Map"
-               + "\nM - Move Santa"
-               + "\nL - Load Sleigh"
-               + "\nS - Select Inventory"
-               + "\nC - Choose Santa"
+               + "\nH - Hat"
+               + "\nC - Cookies"
+               + "\nS - GPS"
+               + "\nG - Goggles"
+               + "\nT - Hot Chocolate"
                + "\nE - Exit"
                + "\n----------------------------";
     
@@ -55,8 +56,8 @@ public class GameMenuView {
             selection = input.charAt(0);
             
             //if selection is invalid
-            if (selection != 'V' && selection != 'M' && selection != 'L'
-                    && selection != 'C' && selection != 'S' && selection != 'E') {
+            if (selection != 'C' && selection != 'H' && selection != 'S'
+                    && selection != 'G' && selection != 'E' && selection != 'T') {
                 System.out.println("Invalid menu entry");
                 continue;
             }
@@ -67,22 +68,21 @@ public class GameMenuView {
     
     public void doAction(char selection){
         switch (selection){
-            case 'V': //view map
-                this.displayViewMap();
+            case 'C': //view map
+                this.displayGetCookie();
                 break;
-            case 'M': //move santa
-                this.displayMoveSanta();
+            case 'H': //move santa
+                this.displayGetHat();
                 break;
             case 'S': //select resource
-                this.displaySelectInventory();
+                this.displayGetGPS();
                 break;
-            case 'L': //load sleigh
-                this.displayLoadSleigh();
+            case 'G': //load sleigh
+                this.displayGetGoggles();
                 break;
-             case 'C': //choose santa
-                this.displayChooseSanta();
+             case 'T': //choose santa
+                this.displayGetHotChocolate();
                 break;
-            
             case 'E': //exit
                 return;
             default:
@@ -90,29 +90,24 @@ public class GameMenuView {
                 break;
         }
     }
-    
-    private void displayViewMap() {
-        System.out.println("*** displayViewMap function called***");
-    }
-    
-    private void displayMoveSanta() {
-        System.out.println("*** displayMoveSanta function called***");
-    }
-    
-    private void displayLoadSleigh() {
-         System.out.println("*** displayLoadSleigh function called***");
-    }
-    
-    private void displayChooseSanta() {
-         System.out.println("*** displayChooseSanta function called***");
-    }
-    
-    private void displayReturnToMain() {
-        System.out.println("*** displayReturnToMenu function called***");
-}
 
-    private void displaySelectInventory() {
-        System.out.println("*** displaySelectInventory function called***");
+    private void displayGetCookie() {
+        System.out.println("*** displayGetCookie function called***");
+    }
+
+    private void displayGetHat() {
+         System.out.println("*** displayGetHat function called***");
+    }
+
+    private void displayGetGPS() {
+         System.out.println("*** displayGetGPS function called***");
+    }
+
+    private void displayGetGoggles() {
+         System.out.println("*** displayGetGoggles function called***");
+    }
+
+    private void displayGetHotChocolate() {
+         System.out.println("*** displayGetHotChocolate function called***");
     }
 }
-    
