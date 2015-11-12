@@ -13,8 +13,9 @@ import santachallenge.control.GameControl;
  *
  * @author Lindsey
  */
-public class HelpMenuView {
-     private final String MENU = "\n"
+public class HelpMenuView extends View{
+     public HelpMenuView() {
+        super ("\n"
                + "\n----------------------------"
                + "\n         Help Menu          "
                + "\n----------------------------"
@@ -25,9 +26,10 @@ public class HelpMenuView {
                + "\nC - Change location"
                + "\nR - Return to main"
                + "\nE - Exit"
-               + "\n----------------------------";
+               + "\n----------------------------");
+     }
     
-public void displayMenu(){
+/* public void displayMenu(){
     char selection = ' ';
        do {
            System.out.println(MENU);
@@ -66,8 +68,14 @@ public void displayMenu(){
             }
         return input;   
     }
+     */
     
-    public void doAction(char selection){
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String)obj;
+        value = value.toUpperCase();
+        char selection = value.charAt(0);
+        
         switch (selection){
             case 'W': //start new game
                 this.displayHowToWin();
@@ -88,11 +96,12 @@ public void displayMenu(){
                 this.displayReturnToMain();
                 break;
             case 'E': //exit
-                return;
+                return true;
             default:
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
+        return false;
     }
     
     private void displayHowToWin() {

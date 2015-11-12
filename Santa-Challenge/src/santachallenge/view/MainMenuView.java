@@ -13,9 +13,10 @@ import santachallenge.control.GameControl;
  *
  * @author Jordan
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    private final String MENU = "\n"
+    public MainMenuView() {
+        super ("\n"
                + "\n----------------------------"
                + "\n         Main Menu          "
                + "\n----------------------------"
@@ -24,10 +25,10 @@ public class MainMenuView {
                + "\nH - Get help on how to play the game"
                + "\nS - Save game"
                + "\nE - Exit"
-               + "\n----------------------------";
-
+               + "\n----------------------------");
+    }
     
-   public void displayMenu() {
+  /* public void displayMenu() {
        
        char selection = ' ';
        do {
@@ -66,8 +67,14 @@ public class MainMenuView {
             }
         return input;   
     }
-    
-    public void doAction(char selection){
+    */
+    @Override
+    public boolean doAction(Object obj) {
+        
+        String value = (String) obj;
+        value = value.toUpperCase();
+        char selection = value.charAt(0);
+        
         switch (selection){
             case 'G': //start new game
                 this.startNewGame();
@@ -77,23 +84,25 @@ public class MainMenuView {
                 break;
             case 'H': //help menu
                 this.displayHelpMenu();
+                this.display();
                 break;
             case 'S': //save game
                 this.displaySaveGame();
                 break;
             case 'E': //exit
-                return;
+                return true;
             default:
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
+        return false;
     }
     
     private void startNewGame() {
         GameControl.createNewGame(SantaChallenge.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
         //System.out.println("*** continueGame function called***");
     }
     
@@ -104,7 +113,7 @@ public class MainMenuView {
     private void displayHelpMenu() {
         //show help menu
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
     
     private void displaySaveGame() {

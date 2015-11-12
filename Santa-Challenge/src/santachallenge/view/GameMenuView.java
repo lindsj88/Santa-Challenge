@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Lindsey
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    private final String MENU = "\n"
+    public GameMenuView() {
+        super ("\n"
                + "\n----------------------------"
                + "\n         Game Play Menu          "
                + "\n----------------------------"
@@ -23,9 +24,10 @@ public class GameMenuView {
                + "\nS - Select Inventory"
                + "\nC - Choose Santa"
                + "\nE - Exit"
-               + "\n----------------------------";
+               + "\n----------------------------");
+    }
     
-    public void displayMenu() {
+    /* public void displayMenu() {
         char selection = ' ';
        do {
            System.out.println(MENU);
@@ -63,9 +65,14 @@ public class GameMenuView {
             break;
             }
         return input;   
-    }
+    } */
     
-    public void doAction(char selection){
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String)obj;
+        value = value.toUpperCase();
+        char selection = value.charAt(0);
+        
         switch (selection){
             case 'V': //view map
                 this.displayViewMap();
@@ -84,11 +91,12 @@ public class GameMenuView {
                 break;
             
             case 'E': //exit
-                return;
+                return true;
             default:
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
+        return false;
     }
     
     private void displayViewMap() {
@@ -114,7 +122,7 @@ public class GameMenuView {
     private void displaySelectInventory() {
         //System.out.println("*** displaySelectInventory function called***");
         SelectInventoryView inventoryMenu = new SelectInventoryView();
-        inventoryMenu.displayMenu();
+        inventoryMenu.display();
     }
 }
     

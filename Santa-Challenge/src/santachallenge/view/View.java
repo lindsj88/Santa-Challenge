@@ -15,6 +15,11 @@ public abstract class View implements ViewInterface {
     
     private String promptMessage;
     
+    public View(String promptMessage) {
+        this.promptMessage = promptMessage;
+    }
+    
+    
     @Override
    public void display() {
        String value = "";
@@ -51,5 +56,11 @@ public abstract class View implements ViewInterface {
           }
         return value;   
     }
+     public String getPromptMessage(){
+        return promptMessage;
+    }
     
+    public void setPromptMessage(String message){
+        this.promptMessage = message;
+    }
 }

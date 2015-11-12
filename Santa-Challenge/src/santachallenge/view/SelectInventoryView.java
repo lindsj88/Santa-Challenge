@@ -13,8 +13,10 @@ import santachallenge.control.GameControl;
  *
  * @author Lindsey
  */
-public class SelectInventoryView {
-    private final String MENU = "\n"
+public class SelectInventoryView extends View{
+    
+    public SelectInventoryView() {
+        super ("\n"
                + "\n----------------------------"
                + "\n         Select a Resource Menu          "
                + "\n----------------------------"
@@ -24,9 +26,10 @@ public class SelectInventoryView {
                + "\nG - Goggles"
                + "\nT - Hot Chocolate"
                + "\nE - Exit"
-               + "\n----------------------------";
+               + "\n----------------------------");
+    }
     
-    public void displayMenu() {
+    /* public void displayMenu() {
         char selection = ' ';
        do {
            System.out.println(MENU);
@@ -65,8 +68,14 @@ public class SelectInventoryView {
             }
         return input;   
     }
-    
-    public void doAction(char selection){
+    */
+        
+   @Override
+    public boolean doAction(Object obj) {
+        String value = (String)obj;
+        value = value.toUpperCase();
+        char selection = value.charAt(0);
+        
         switch (selection){
             case 'C': //view map
                 this.displayGetCookie();
@@ -84,11 +93,12 @@ public class SelectInventoryView {
                 this.displayGetHotChocolate();
                 break;
             case 'E': //exit
-                return;
+                return true;
             default:
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
+        return false;
     }
 
     private void displayGetCookie() {

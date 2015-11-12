@@ -11,8 +11,9 @@ import java.util.Scanner;
  *
  * @author Jordan
  */
-public class MapView {
-     private final String MENU = "\n"
+public class MapView extends View{
+     public MapView() {
+        super ("\n"
                + "\n----------------------------"
                + "\n         Game Play Menu          "
                + "\n----------------------------"
@@ -41,9 +42,10 @@ public class MapView {
                + "\nW - Perth, Austrailia"
                + "\nX - Melbourne, Australia"
                + "\nY - Brisbane, Autralia"
-               + "\n----------------------------";
+               + "\n----------------------------");
+     }
     
-    public void displayMenu() {
+   /* public void displayMenu() {
         char selection = ' ';
        do {
            System.out.println(MENU);
@@ -92,9 +94,14 @@ public class MapView {
             break;
             }
         return input;   
-    }
+    } */
     
-    public void doAction(char selection){
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String)obj;
+        value = value.toUpperCase();
+        char selection = value.charAt(0);
+        
         switch (selection){
             case 'A': //location
                 this.displayNorthPole();
@@ -176,6 +183,7 @@ public class MapView {
                 System.out.println("\n***Invalid Selection***");
                 break;
         }
+        return false;
     }
     
     private void displayViewMap() {
