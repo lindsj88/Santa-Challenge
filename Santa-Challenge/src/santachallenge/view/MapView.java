@@ -21,27 +21,28 @@ public class MapView extends View{
                + "\nB - Los Angeles, USA"
                + "\nC - Seattle, USA"
                + "\nD - Ottawa, Canada"
-               + "\nE - nchorage, Alaska"
-               + "\nF - Mexico City, Mexico"
-               + "\nG - Sao Paulo, Brazil"
-               + "\nH - Santiago, Chile"
-               + "\nI - Buenas Aires, Argentina"
-               + "\nJ - Bogota, Columbia"
-               + "\nK - Cape Town, South Africa"
-               + "\nL - Nairobi, Kenya"
-               + "\nM - Lagos, Nigeria"
-               + "\nN - Casablanca, Morocco"
-               + "\nO - Moscow, Russia"
-               + "\nP - London, England"
-               + "\nQ - Madrid, Spain"
-               + "\nR - Prague, Czech Republic"
-               + "\nS - Mumbai, India"
-               + "\nT - Hong Kong, China"
-               + "\nU - Ulaanbaatar, Mongolia"
-               + "\nV - Bangkok, Thailand"
-               + "\nW - Perth, Austrailia"
-               + "\nX - Melbourne, Australia"
-               + "\nY - Brisbane, Autralia"
+               + "\nF - Anchorage, Alaska"
+               + "\nG - Mexico City, Mexico"
+               + "\nH - Sao Paulo, Brazil"
+               + "\nI - Santiago, Chile"
+               + "\nJ - Buenas Aires, Argentina"
+               + "\nK - Bogota, Columbia"
+               + "\nL - Cape Town, South Africa"
+               + "\nM - Nairobi, Kenya"
+               + "\nN - Lagos, Nigeria"
+               + "\nO - Casablanca, Morocco"
+               + "\nP - Moscow, Russia"
+               + "\nQ - London, England"
+               + "\nR - Madrid, Spain"
+               + "\nS - Prague, Czech Republic"
+               + "\nT - Mumbai, India"
+               + "\nU - Hong Kong, China"
+               + "\nV - Ulaanbaatar, Mongolia"
+               + "\nW - Bangkok, Thailand"
+               + "\nX - Perth, Austrailia"
+               + "\nY - Melbourne, Australia"
+               + "\nZ - Brisbane, Autralia"
+               + "\nE - Exit"
                + "\n----------------------------");
      }
     
@@ -76,7 +77,7 @@ public class MapView extends View{
             
             //if selection is invalid
             if (selection != 'A' && selection != 'B' && selection != 'C' 
-                    && selection != 'D' && selection != 'E' 
+                    && selection != 'D' && selection != 'Z' 
                     && selection != 'F' && selection != 'G' 
                     && selection != 'H' && selection != 'I'
                     && selection != 'J' && selection != 'K' 
@@ -107,110 +108,185 @@ public class MapView extends View{
                 this.displayNorthPole();
                 break;
             case 'B': //location
-                this.displayMoveSanta();
+                this.displayLA();
                 break;
             case 'C': //location
-                this.displaySelectInventory();
+                this.displaySeattle();
                 break;
             case 'D': //location
-                this.displayLoadSleigh();
-                break;
-             case 'E': //location
-                this.displayChooseSanta();
+                this.displayOttawa();
                 break;
              case 'F': //location
-                this.displayViewMap();
+                this.displayAnchorage();
                 break;
-            case 'G': //location
-                this.displayMoveSanta();
+             case 'G': //location
+                this.displayMexico();
                 break;
             case 'H': //location
-                this.displaySelectInventory();
+                this.displayBrazil();
                 break;
             case 'I': //location
-                this.displayLoadSleigh();
+                this.displayChile();
                 break;
-             case 'J': //location
-                this.displayChooseSanta();
+            case 'J': //location
+                this.displayArgentina();
                 break;
-                 
-                  case 'K': //location
-                this.displayViewMap();
+             case 'K': //location
+                this.displayColumbia();
                 break;
-            case 'L': //location
-                this.displayMoveSanta();
+             case 'L': //location
+                this.displaySouthAfrica();
                 break;
             case 'M': //location
-                this.displaySelectInventory();
+                this.displayKenya();
                 break;
             case 'N': //location
-                this.displayLoadSleigh();
+                this.displayNigeria();
                 break;
-             case 'O': //location
-                this.displayChooseSanta();
+            case 'O': //location
+                this.displayMorocco();
                 break;
-                  case 'P': //location
-                this.displayViewMap();
+             case 'P': //location
+                this.displayRussia();
                 break;
-            case 'Q': //location
-                this.displayMoveSanta();
+                  case 'Q': //location
+                this.displayEngland();
                 break;
             case 'R': //location
-                this.displaySelectInventory();
+                this.displaySpain();
                 break;
             case 'S': //location
-                this.displayLoadSleigh();
+                this.displayCzechRepublic();
                 break;
-             case 'T': //location
-                this.displayChooseSanta();
+            case 'T': //location
+                this.displayIndia();
                 break;
-                  case 'U': //location
-                this.displayViewMap();
+             case 'U': //location
+                this.displayChina();
                 break;
-            case 'V': //location
-                this.displayMoveSanta();
+                  case 'V': //location
+                this.displayMongolia();
                 break;
             case 'W': //location
-                this.displaySelectInventory();
+                this.displayThailand();
                 break;
             case 'X': //location
-                this.displayLoadSleigh();
+                this.displayAustrailia();
                 break;
-             case 'Y': //location
-                this.displayChooseSanta();
+            case 'Y': //location
+                this.displayMelbourne();
                 break;
+             case 'Z': //location
+                this.displayBrisbane();
+                break;
+            case 'E': //exit
+                return true;
             default:
-                System.out.println("\n***Invalid Selection***");
+                System.out.println("\n Invalid Selection, please try again");
                 break;
         }
         return false;
     }
     
-    private void displayViewMap() {
-        System.out.println("*** displayViewMap function called***");
-    }
-    
-    private void displayMoveSanta() {
-        System.out.println("*** displayMoveSanta function called***");
-    }
-    
-    private void displayLoadSleigh() {
-         System.out.println("*** displayLoadSleigh function called***");
-    }
-    
-    private void displayChooseSanta() {
-         System.out.println("*** displayChooseSanta function called***");
-    }
-    
-    private void displayReturnToMain() {
-        System.out.println("*** displayReturnToMenu function called***");
-}
-
-    private void displaySelectInventory() {
-        System.out.println("*** displaySelectInventory function called***");
+ 
+    private void displayNorthPole() { 
+            System.out.println("You are now back at the North Pole");
+        
     }
 
-    private void displayNorthPole() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayLA() {
+        System.out.println("You are now in Los Angeles California USA");
+    }
+
+    private void displaySeattle() {
+        System.out.println("You are now in Seattle Washington, USA");
+    }
+
+    private void displayOttawa() {
+        System.out.println("You are now in Ottawa, Canada");
+    }
+
+    private void displayAnchorage() {
+        System.out.println("You are now in Anchorage, Alaska");
+    }
+
+    private void displayMexico() {
+        System.out.println("You are now in Mexico City, Mexico");
+    }
+
+    private void displayBrazil() {
+        System.out.println("You are now in Sao Paulo, Brazil");
+    }
+
+    private void displayChile() {
+        System.out.println("You are now in Santiago, Chile");
+    }
+
+    private void displayArgentina() {
+        System.out.println("You are now in Buenas Aires, Argentina");
+    }
+
+    private void displayColumbia() {
+        System.out.println("You are now in Bogota, Columbia");
+    }
+
+    private void displaySouthAfrica() {
+        System.out.println("You are now back in Cape Town, South Africa");
+    }
+
+    private void displayKenya() {
+        System.out.println("You are now in Nairobi, Kenya");
+    }
+
+    private void displayNigeria() {
+        System.out.println("You are now in Lagos, Nigeria");
+    }
+
+    private void displayMorocco() {
+        System.out.println("You are now in Casablanca, Morocco");
+    }
+
+    private void displayRussia() {
+        System.out.println("You are now in Moscow, Russia");
+    }
+
+    private void displayEngland() {
+        System.out.println("You are now in London, England");
+    }
+
+    private void displaySpain() {
+        System.out.println("You are now in Madrid, Spain");
+    }
+
+    private void displayCzechRepublic() {
+        System.out.println("You are now in Prague, Czech Republic");
+    }
+
+    private void displayIndia() {
+       System.out.println("You are now in Mumbai, India");
+    }
+
+    private void displayChina() {
+        System.out.println("You are now in Hong Kong, China");
+    }
+
+    private void displayMongolia() {
+        System.out.println("You are now in Ulaanbaatar, Mongolia");
+    }
+
+    private void displayThailand() {
+        System.out.println("You are now in Bangkok, Thailand");
+    }
+
+    private void displayAustrailia() {
+        System.out.println("You are now in Perth, Austrailia");
+    }
+
+    private void displayMelbourne() {
+        System.out.println("You are now in Melbourne, Australia");
+    }
+
+    private void displayBrisbane() {
+        System.out.println("You are now in Brisbane, Autralia");
     }
 }

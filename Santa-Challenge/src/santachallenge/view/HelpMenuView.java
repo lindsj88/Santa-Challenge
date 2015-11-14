@@ -23,9 +23,8 @@ public class HelpMenuView extends View{
                + "\nM - Map and locations"
                + "\nF - Feed Santa"
                + "\nL - Load sleigh" 
-               + "\nC - Change location"
-               + "\nR - Return to main"
                + "\nE - Exit"
+               + "\n   Please make a selection"
                + "\n----------------------------");
      }
     
@@ -83,22 +82,16 @@ public class HelpMenuView extends View{
             case 'M': //continue saved game
                 this.displayMap();
                 break;
-            case 'F': //help menu
+            case 'F':
                 this.displayFeed();
                 break;
-            case 'L': //save game
+            case 'L':
                 this.displayLoad();
-                break;
-             case 'C': //save game
-                this.displayChangeLocation();
-                break;
-            case 'R': //save game
-                this.displayReturnToMain();
                 break;
             case 'E': //exit
                 return true;
             default:
-                System.out.println("\n***Invalid Selection***");
+                System.out.println("\n Invalid Selection, please try again");
                 break;
         }
         return false;
@@ -109,7 +102,9 @@ public class HelpMenuView extends View{
     }
     
     private void displayMap() {
-        System.out.println("*** displayMap function called***");
+        MapView mapMenu = new MapView();
+        mapMenu.display();
+        //System.out.println("*** displayMap function called***");
     }
     
     private void displayFeed() {
@@ -119,14 +114,6 @@ public class HelpMenuView extends View{
     private void displayLoad() {
          System.out.println("*** displayLoad function called***");
     }
-    
-    private void displayChangeLocation() {
-        System.out.println("*** displayChangeLocation function called***");
-    }
-    
-    private void displayReturnToMain() {
-        System.out.println("*** displayReturnToMenu function called***");
-}
 }
 
 

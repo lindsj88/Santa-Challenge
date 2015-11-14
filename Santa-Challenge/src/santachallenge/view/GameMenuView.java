@@ -14,15 +14,15 @@ import java.util.Scanner;
 public class GameMenuView extends View {
     
     public GameMenuView() {
+        
         super ("\n"
                + "\n----------------------------"
                + "\n         Game Play Menu          "
                + "\n----------------------------"
-               + "\nV - View Map"
-               + "\nM - Move Santa"
+               + "\nV - View Map/Pick a location"
                + "\nL - Load Sleigh"
                + "\nS - Select Inventory"
-               + "\nC - Choose Santa"
+               + "\nC - Choose Santa's Partner"
                + "\nE - Exit"
                + "\n----------------------------");
     }
@@ -77,9 +77,6 @@ public class GameMenuView extends View {
             case 'V': //view map
                 this.displayViewMap();
                 break;
-            case 'M': //move santa
-                this.displayMoveSanta();
-                break;
             case 'S': //select resource
                 this.displaySelectInventory();
                 break;
@@ -100,11 +97,8 @@ public class GameMenuView extends View {
     }
     
     private void displayViewMap() {
-        System.out.println("*** displayViewMap function called***");
-    }
-    
-    private void displayMoveSanta() {
-        System.out.println("*** displayMoveSanta function called***");
+         MapView mapMenu = new MapView();
+            mapMenu.display();
     }
     
     private void displayLoadSleigh() {
@@ -114,10 +108,6 @@ public class GameMenuView extends View {
     private void displayChooseSanta() {
          System.out.println("*** displayChooseSanta function called***");
     }
-    
-    private void displayReturnToMain() {
-        System.out.println("*** displayReturnToMenu function called***");
-}
 
     private void displaySelectInventory() {
         //System.out.println("*** displaySelectInventory function called***");
