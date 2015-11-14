@@ -24,6 +24,7 @@ public class GameMenuView extends View {
                + "\nS - Select Inventory"
                + "\nC - Choose Santa's Partner"
                + "\nF - Feed Santa"
+               + "\nZ - Flying speed"
                + "\nE - Exit"
                + "\n----------------------------");
     }
@@ -87,6 +88,9 @@ public class GameMenuView extends View {
              case 'C': //choose santa
                 this.displayChooseSanta();
                 break;
+                 case 'Z': //choose santa
+                this.displayFlyingSpeedControl();
+                break;
              case 'F':
                this.displayFeedSanta();
             case 'E': //exit
@@ -121,5 +125,11 @@ public class GameMenuView extends View {
         FeedSantaView feedSantaView = new FeedSantaView();
         feedSantaView.display();
     }
+     private void displayFlyingSpeedControl() {
+        FlyingSpeedView flyingSpeedView = new FlyingSpeedView();
+        flyingSpeedView.display();
+    }
+
+   
 }
     

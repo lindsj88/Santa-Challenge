@@ -10,7 +10,7 @@ package santachallenge.control;
  * @author Lindsey
  */
 public class FlyingSpeedControl {
-    
+    private double total;
     public double FlyingSpeed (double speed) {
         if (speed < 50) {
        return -1;
@@ -26,5 +26,9 @@ public class FlyingSpeedControl {
      
      return flyingDuration;
      
+    }
+      public void display() {
+        
+        System.out.println("Santa flew around the world in " + total);
     }
 }
