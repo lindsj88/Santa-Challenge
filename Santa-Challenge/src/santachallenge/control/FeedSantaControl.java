@@ -10,9 +10,10 @@ package santachallenge.control;
  * @author Lindsey
  */
 public class FeedSantaControl {
+    private double total;
    
     public double IsSantaFull(double calories, double age) {
-        
+    
         
      if (calories < 2001) {
        return -1;
@@ -29,5 +30,9 @@ public class FeedSantaControl {
      return total;
      
     }
-   
+
+    public void display() {
+        
+        System.out.println("Santa ate " + total + " calories");
+    }
 }

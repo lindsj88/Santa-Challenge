@@ -5,25 +5,27 @@
  */
 package santachallenge.view;
 
-import java.util.Scanner;
+import santachallenge.control.FeedSantaControl;
 
 /**
  *
  * @author Lindsey
  */
-public class GameMenuView extends View {
+public class FeedSantaView extends View {
     
-    public GameMenuView() {
+    public FeedSantaView() {
         
         super ("\n"
                + "\n----------------------------"
-               + "\n         Game Play Menu          "
+               + "\n   What should Santa eat"
+               + "\n   to help him make it "
+               + "\n   around the world?        "
                + "\n----------------------------"
-               + "\nV - View Map/Pick a location"
-               + "\nL - Load Sleigh"
-               + "\nS - Select Inventory"
-               + "\nC - Choose Santa's Partner"
-               + "\nF - Feed Santa"
+               + "\nP - 2 pieces of pizza"
+               + "\nB - 12 slices of bacon"
+               + "\nS - 1 steak"
+               + "\nO - 1 big bowl of oatmeal"
+               + "\nY - Yogurt and a banana"
                + "\nE - Exit"
                + "\n----------------------------");
     }
@@ -75,20 +77,21 @@ public class GameMenuView extends View {
         char selection = value.charAt(0);
         
         switch (selection){
-            case 'V': //view map
-                this.displayViewMap();
+            case 'P': 
+          this.displayFeedSantaControl();
                 break;
-            case 'S': //select resource
-                this.displaySelectInventory();
+            case 'B': //select resource
+                this.displayFeedSantaControl();
                 break;
-            case 'L': //load sleigh
-                this.displayLoadSleigh();
+            case 'S': //load sleigh
+                this.displayFeedSantaControl();
                 break;
-             case 'C': //choose santa
-                this.displayChooseSanta();
+             case 'O': //choose santa
+                this.displayFeedSantaControl();
                 break;
-             case 'F':
-               this.displayFeedSanta();
+            case 'Y': //choose santa
+                this.displayFeedSantaControl();
+                break;
             case 'E': //exit
                 return true;
             default:
@@ -97,29 +100,12 @@ public class GameMenuView extends View {
         }
         return false;
     }
-    
-    private void displayViewMap() {
-         MapView mapMenu = new MapView();
-            mapMenu.display();
-    }
-    
-    private void displayLoadSleigh() {
-         System.out.println("*** displayLoadSleigh function called***");
-    }
-    
-    private void displayChooseSanta() {
-         System.out.println("*** displayChooseSanta function called***");
-    }
 
-    private void displaySelectInventory() {
-        //System.out.println("*** displaySelectInventory function called***");
-        SelectInventoryView inventoryMenu = new SelectInventoryView();
-        inventoryMenu.display();
-    }
 
-    private void displayFeedSanta() {
-        FeedSantaView feedSantaView = new FeedSantaView();
-        feedSantaView.display();
-    }
+ private void displayFeedSantaControl() {
+        int calories = 2500;
+        FeedSantaControl feedControl = new FeedSantaControl();
+        feedControl.display();
+ }
 }
     
