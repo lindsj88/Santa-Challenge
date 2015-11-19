@@ -5,6 +5,7 @@
  */
 package santachallenge.model;
 import java.io.Serializable;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,55 @@ import java.util.Objects;
 public class Game implements Serializable{
     private double time;
     private String playerName;
+    private Sleigh sleigh;
+    private Player player;
+    private Map[] map;
+
+    public Map[] getMap() {
+        return map;
+    }
+
+    public void setMap(Map[] map) {
+        this.map = map;
+    }
+    private Inventory inventory;
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public String[] getSanta() {
+        return Santa;
+    }
+
+    public void setSanta(String[] Santa) {
+        this.Santa = Santa;
+    }
+    private String[] Santa;
+
+    public Sleigh getSleigh() {
+        return sleigh;
+    }
+
+    public void setSleigh(Sleigh sleigh) {
+        this.sleigh = sleigh;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap(Map map) {
+        return map;
+    }
 
     public Game() {
     }

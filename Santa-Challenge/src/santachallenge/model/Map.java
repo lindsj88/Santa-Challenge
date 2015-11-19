@@ -5,6 +5,7 @@
  */
 package santachallenge.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,57 +13,50 @@ import java.util.Objects;
  *
  * @author Jordan
  */
-public class Map implements Serializable {
-    private String name;
-    private double distance;
+public enum Map implements Serializable {
+   
+    Location1("Noth Pole"),
+       Location2("Los Angeles, USA"),
+       Location3("Seattle, USA"),
+          Location4("Ottawa, Canada"),
+          Location5("Anchorage, Alaska"),
+          Location6("Mexico City, Mexico"),
+          Location7("Sao Paulo, Brazil"),
+        Location8("Santiago, Chile"),
+        Location9("Buenas Aires, Argentina"),
+               Location10("Bogota, Columbia"),
+               Location11("Cape Town, South Africa"),
+      Location12("Nairobi, Kenya"),
+      Location13("Lagos, Nigeria"),
+      Location14("Casablanca, Morocco"),
+      Location15("Moscow, Russia"),
+      Location16("London, England"),
+             Location17("Madrid, Spain"),
+             Location18("Prague, Czech Republic"),
+               Location19("Mumbai, India"),
+        Location20("Hong Kong, China"),
+             Location21("Ulaanbaatar, Mongolia"),
+             Location22("Bangkok, Thailand"),
+             Location23("Perth, Austrailia"),
+              Location24("Melbourne, Australia"),
+              Location25("Brisbane, Autralia");
 
-    public Map() {
-    }
+    private final String description;
+    private final Point coordinates;
+    
 
-    public String getName() {
-        return name;
-    }
+Map(String description) {
+    this.description = description;
+   coordinates = new Point(1,1);
+ }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+public String getDescription() {
+    return description;
+ }
 
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + Objects.hashCode(this.name);
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.distance) ^ (Double.doubleToLongBits(this.distance) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Map other = (Map) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.distance) != Double.doubleToLongBits(other.distance)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Map{" + "name=" + name + ", distance=" + distance + '}';
-    }
+public Point getCoordinates() {
+   return coordinates;
+ }
 }
+    
+   

@@ -15,6 +15,15 @@ import java.util.Objects;
 public class Player implements Serializable {
     private String name;
     private double bestTime;
+    private Santa santa;
+
+    public Santa getSanta() {
+        return santa;
+    }
+
+    public void setSanta(Santa santa) {
+        this.santa = santa;
+    }
 
     public String getName() {
         return name;

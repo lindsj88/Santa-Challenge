@@ -18,6 +18,15 @@ public class Reindeer implements Serializable {
     private double speed;
     private double strength;
     private double number;
+    private Sleigh sleigh;
+
+    public Sleigh getSleigh() {
+        return sleigh;
+    }
+
+    public void setSleigh(Sleigh sleigh) {
+        this.sleigh = sleigh;
+    }
 
     public Reindeer() {
     }

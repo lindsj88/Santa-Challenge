@@ -5,58 +5,34 @@
  */
 package santachallenge.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 
 /**
  *
  * @author Lindsey
  */
-public class Santa implements Serializable {
+public enum Santa implements Serializable {
     
-    //class instance variables
-    private double caloriesConsumed;
-
-    public Santa() {
-    }
-
-    public double getCaloriesConsumed() {
-        return caloriesConsumed;
-    }
-
-    public void setCaloriesConsumed(double caloriesConsumed) {
-        this.caloriesConsumed = caloriesConsumed;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 13 * hash + (int) (Double.doubleToLongBits(this.caloriesConsumed) ^ (Double.doubleToLongBits(this.caloriesConsumed) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Santa other = (Santa) obj;
-        if (Double.doubleToLongBits(this.caloriesConsumed) != Double.doubleToLongBits(other.caloriesConsumed)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Santa{" + "caloriesConsumed=" + caloriesConsumed + '}';
-    }
-
-    public void setcaloriesConsumed(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    Santa("Ho ho ho"),
+    MrsClaus("Santa's wife"),
+    BuddyTheElf("Santa's chief elf"),
+    JeanaTheElf("Buddy's wife");
     
+    private final String description;
+    private final Point coordinates;
     
+
+Santa(String description) {
+    this.description = description;
+    coordinates = new Point(1,1);
+}
+
+public String getDescription() {
+    return description;
+}
+
+public Point getCoordinates() {
+    return coordinates;
+}
 }
