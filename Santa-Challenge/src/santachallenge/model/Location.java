@@ -13,10 +13,14 @@ import java.util.Objects;
  * @author Lindsey
  */
 public class Location implements Serializable{
+    private int row;
+    private int column;
+    private boolean visited;
+    private Scene scene;
+    private ArrayList<Santa> sanata;
     
     //class instance variables
     private String name;
-    private String visited;
 
     public Location() {
     }

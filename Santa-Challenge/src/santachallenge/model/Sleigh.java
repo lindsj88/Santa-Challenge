@@ -14,9 +14,12 @@ import java.io.Serializable;
 public class Sleigh implements Serializable{
     private double speed;
     private double weight;
-    private double size;
+    private double numberOfPresents;
 
     public Sleigh() {
+        this.speed = 0;
+        this.weight = 0;
+        this.numberOfPresents = 0;
     }
 
     public double getSpeed() {
@@ -35,12 +38,12 @@ public class Sleigh implements Serializable{
         this.weight = weight;
     }
 
-    public double getSize() {
-        return size;
+    public double getNumberOfPresents() {
+        return numberOfPresents;
     }
 
-    public void setSize(double size) {
-        this.size = size;
+    public void setNumberOfPresents(double numberOfPresents) {
+        this.numberOfPresents = numberOfPresents;
     }
 
     @Override
@@ -48,7 +51,7 @@ public class Sleigh implements Serializable{
         int hash = 7;
         hash = 41 * hash + (int) (Double.doubleToLongBits(this.speed) ^ (Double.doubleToLongBits(this.speed) >>> 32));
         hash = 41 * hash + (int) (Double.doubleToLongBits(this.weight) ^ (Double.doubleToLongBits(this.weight) >>> 32));
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this.size) ^ (Double.doubleToLongBits(this.size) >>> 32));
+        hash = 41 * hash + (int) (Double.doubleToLongBits(this.numberOfPresents) ^ (Double.doubleToLongBits(this.numberOfPresents) >>> 32));
         return hash;
     }
 
@@ -67,12 +70,12 @@ public class Sleigh implements Serializable{
         if (Double.doubleToLongBits(this.weight) != Double.doubleToLongBits(other.weight)) {
             return false;
         }
-        return Double.doubleToLongBits(this.size) == Double.doubleToLongBits(other.size);
+        return Double.doubleToLongBits(this.numberOfPresents) == Double.doubleToLongBits(other.numberOfPresents);
     }
 
     @Override
     public String toString() {
-        return "Sleigh{" + "speed=" + speed + ", weight=" + weight + ", size=" + size + '}';
+        return "Sleigh{" + "speed=" + speed + ", weight=" + weight + ", number of presents=" + numberOfPresents + '}';
     }
 
 }
