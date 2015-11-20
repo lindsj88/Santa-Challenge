@@ -14,9 +14,37 @@ import java.util.Objects;
  * @author Jordan
  */
 public class Map implements Serializable {
+
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
+
+    public Map() {
+
+    }
+    public Map(int noOfRows, int noOfColumns)
+
+    
+        ) {
+    
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows nd columns must be > zero")
+            return;
+        }
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        this.locations = new Location [noOfRows][noOfColumns];
+        for (int row = 0; row < noOfRows; row++){
+            for(int column = 0; column < noOfColumns; column++){
+            Location location = new Location();
+            location.setColumn(column);
+            location.setRow(row);
+            location.setVisited(false);
+            
+            locations [row][column] = location;
+        }
+    }
 }
 
    /* Location1("Noth Pole"),
