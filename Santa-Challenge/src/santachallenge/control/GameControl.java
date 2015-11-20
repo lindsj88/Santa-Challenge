@@ -5,8 +5,8 @@
  */
 package santachallenge.control;
 
-import java.io.Serializable;
-import santachallenge.model.Inventory;
+import santachallenge.SantaChallenge;
+import santachallenge.model.Game;
 import santachallenge.model.Map;
 import santachallenge.model.Player;
 import santachallenge.model.Sleigh;
@@ -16,24 +16,15 @@ import santachallenge.model.Sleigh;
  * @author Lindsey
  */
 public class GameControl {
-    public class Game implements Serializable {
-        private double totalTime;
-        
-        private Player player;
-        private Map map;
-        private Sleigh sleigh;
-        private Inventory inventory;
-    
    
-    }
     public static void createNewGame(Player player) {
         
         Game game = new Game();
-        santachallenge.setCurrentGame(game);
+        SantaChallenge.setCurrentGame(game);
         
         game.setPlayer(player);
         
-        inventoryItem[] inventoryList = GameControl.createInventoryList();
+        InventoryControl[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);
         
         Sleigh sleigh = new Sleigh();
@@ -44,6 +35,7 @@ public class GameControl {
         
         MapControl.moveActorsToStartingLocation(map);
         
+    }
         public static InventoryItem[] createInventoryList() {
             System.out.println("*** called createInventoryList() in GameControl ***");
             return null;
@@ -91,15 +83,27 @@ public class GameControl {
             
             return inventory;
             
-            public enum Item {
-                hat,
-                cookies,
-                gps,
-                gloves,
-                goggles,
-                hotChocolate;
+        }
+        
+        public static InventoryItems[] getSortedInventoryList() {
+            
+            InventoryItems[] originalInventoryList = 
+                    SantaChallenge.getCurrentGame().getInventory();
+            
+            InventoryItem[] inventoryList = originalInventoryList.clone();
+            
+            InventoryItem tempInventoryItem;
+            for (int i=0; i < inventoryList.length-1; i++) {
+                for (int j=0; j<inventoryList.length-1-i; j++) {
+                    if(inventoryList[j].getDescription().
+                            compareToIgnoreCase(inventoryList[j + 1].
+                                    getDescription() > 0) {
+                        tempInventoryItem = inventoryList[j];
+                        inventoryList[j] = inventoryList[j + 1];
+                        inventoryList[j + 1] = tempInventoryItem;
+                    }
+                }
             }
+            return inventoryList;
         }
     }
-    
-}

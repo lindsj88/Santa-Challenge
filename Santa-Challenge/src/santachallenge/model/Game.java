@@ -7,6 +7,7 @@ package santachallenge.model;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
+import santachallenge.control.InventoryControl;
 
 /**
  *
@@ -116,4 +117,8 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "time=" + time + ", playerName=" + playerName + '}';
     } 
+
+    public void setInventory(InventoryControl[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

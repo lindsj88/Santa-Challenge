@@ -6,6 +6,9 @@
 package santachallenge.view;
 
 import java.util.Scanner;
+import santachallenge.SantaChallenge;
+import santachallenge.control.GameControl;
+import santachallenge.model.Location;
 
 /**
  *
@@ -103,9 +106,25 @@ public class GameMenuView extends View {
     }
     
     private void displayViewMap() {
-         MapView mapMenu = new MapView();
-            mapMenu.display();
+        Location[][] locations = SantaChallenge.getCurrentGame().
+                getMap().getLocations();
+        System.out.println("Locations");
+        
+        //display row/colum numbers
+        
+        //FOR every row
+        for (int i=0; i<locations.; i++) {
+            System.out.println("----------------");
+            
+            for(int j=0; j<locations.length; j++) {
+                System.out.println("|");
+                System.out.print(locations[i][j].getScene());
+            }
+            System.out.print("?");
+        }
+        System.out.println("-------------------------------");
     }
+
     
     private void displayLoadSleigh() {
          System.out.println("*** displayLoadSleigh function called***");
@@ -116,10 +135,23 @@ public class GameMenuView extends View {
     }
 
     private void displaySelectInventory() {
-        //System.out.println("*** displaySelectInventory function called***");
-        SelectInventoryView inventoryMenu = new SelectInventoryView();
-        inventoryMenu.display();
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("n\List of Inventory");
+        System.out.println("Description" + "\t" + 
+                            "Required" + "\t" +
+                            "In stock");
+        
+        for (InventoryItem inventoryItem : inventory) {
+            System.out.println(inventoryItem.getDescription() + "\t " +
+                    inventoryItem.getRequiredAmount() + "\t " +
+                    inventoryItem.getQuantity());
+        }
     }
+        //System.out.println("*** displaySelectInventory function called***");
+       /* SelectInventoryView inventoryMenu = new SelectInventoryView();
+        inventoryMenu.display();
+    }*/
 
     private void displayFeedSanta() {
         FeedSantaView feedSantaView = new FeedSantaView();
