@@ -5,7 +5,6 @@
  */
 package santachallenge.model;
 
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,77 +14,40 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
 
-    private int noOfRows;
-    private int noOfColumns;
+    private int rows;
+    private int columns;
     private Location[][] locations;
 
     public Map() {
-
+        
     }
-    public Map(int noOfRows, int noOfColumns)
-
+    public Map(int rows, int columns) {
     
-        ) {
-    
-        if (noOfRows < 1 || noOfColumns < 1) {
-            System.out.println("The number of rows nd columns must be > zero")
+        if (rows < 1 || columns < 1) {
+            System.out.println("Not a valid location");
             return;
         }
-        this.noOfRows = noOfRows;
-        this.noOfColumns = noOfColumns;
         
-        this.locations = new Location [noOfRows][noOfColumns];
-        for (int row = 0; row < noOfRows; row++){
-            for(int column = 0; column < noOfColumns; column++){
+        this.rows = rows;
+        this.columns = columns;
+        
+        this.locations = new Location[rows][columns];
+        for (int row = 0; row < rows; row++){
+            for(int column = 0; column < columns; column++){
             Location location = new Location();
             location.setColumn(column);
             location.setRow(row);
             location.setVisited(false);
             
-            locations [row][column] = location;
+            locations[row][column] = location;
         }
     }
 }
-
-   /* Location1("Noth Pole"),
-    Location2("Los Angeles, USA"),
-    Location3("Seattle, USA"),
-    Location4("Ottawa, Canada"),
-    Location5("Anchorage, Alaska"),
-    Location6("Mexico City, Mexico"),
-    Location7("Sao Paulo, Brazil"),
-    Location8("Santiago, Chile"),
-    Location9("Buenas Aires, Argentina"),
-    Location10("Bogota, Columbia"),
-    Location11("Cape Town, South Africa"),
-    Location12("Nairobi, Kenya"),
-    Location13("Lagos, Nigeria"),
-    Location14("Casablanca, Morocco"),
-    Location15("Moscow, Russia"),
-    Location16("London, England"),
-    Location17("Madrid, Spain"),
-    Location18("Prague, Czech Republic"),
-    Location19("Mumbai, India"),
-    Location20("Hong Kong, China"),
-    Location21("Ulaanbaatar, Mongolia"),
-    Location22("Bangkok, Thailand"),
-    Location23("Perth, Austrailia"),
-    Location24("Melbourne, Australia"),
-    Location25("Brisbane, Autralia");
-
-    private final String description;
-    private final Point coordinates;
-
-    Map(String description) {
-        this.description = description;
-        coordinates = new Point(1, 1);
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public Point getCoordinates() {
-        return coordinates;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 }

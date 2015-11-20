@@ -6,6 +6,7 @@
 package santachallenge.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,10 +18,9 @@ public class Location implements Serializable{
     private int column;
     private boolean visited;
     private Scene scene;
-    private ArrayList<Santa> sanata;
-    
-    //class instance variables
+    private ArrayList<Santa> santa;
     private String name;
+     
 
     public Location() {
     }
@@ -33,13 +33,38 @@ public class Location implements Serializable{
         this.name = name;
     }
 
-    public String getVisited() {
+    public boolean getVisited() {
         return visited;
     }
-
-    public void setVisited(String visited) {
+    
+     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+     
+      public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+     
 
     @Override
     public int hashCode() {
@@ -71,11 +96,5 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "name=" + name + ", visited=" + visited + '}';
     }
-
-    public boolean getScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
     
 }

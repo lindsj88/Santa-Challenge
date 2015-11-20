@@ -7,45 +7,17 @@ package santachallenge.control;
 
 import santachallenge.SantaChallenge;
 import santachallenge.model.Game;
-import santachallenge.model.Location;
-import santachallenge.model.Map;
 import santachallenge.model.Scene;
 
 /**
  *
  * @author Lindsey
  */
-public class MapControl {
-    
-    public static Map createMap() {
-        
-        Map map = new Map(20, 20); 
-        
-        Scene[] scenes = createScenes();
-        
-        assignScenesToLocations(map, scenes);
-        
-        return map;
-    }
-    
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
-        
-        locations[0][0].setScene(scenes[SceneType.north_pole.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.delivery.ordinal()]);
-    }
-    
-    public enum SceneType {
-        start,
-        north_pole,
-        delivery,
-        finish;
-    }
-    
+public class SceneControl {
     private static Scene[] createScenes() {
         Game game = SantaChallenge.getCurrentGame();
         
-        Scene[] scenes = new Scene[SceneType.values().length];
+        Scene[] scenes = new Scene[MapControl.SceneType.values().length];
         
         Scene startingScene = new Scene();
         startingScene.setDescription(
@@ -55,17 +27,16 @@ public class MapControl {
         startingScene.setMapSymbol("ST");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-        scenes[SceneType.start.ordinal()] = startingScene;
+        scenes[MapControl.SceneType.start.ordinal()] = startingScene;
         
         Scene finishScene = new Scene();
         finishScene.setDescription(
-                "\n Congratulations! You helped Santa deliver"
+                "\n Congratulations! You helpes Santa deliver"
                         + "all the presents. You win!");
         finishScene.setMapSymbol("FN");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        scenes[SceneType.finish.ordinal()] = finishScene;
+        scenes[MapControl.SceneType.finish.ordinal()] = finishScene;
     }
     
 }
-
