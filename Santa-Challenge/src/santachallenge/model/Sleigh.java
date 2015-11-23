@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author Jordan
  */
 public class Sleigh implements Serializable{
+    private String description;
     private double speed;
     private double weight;
     private double numberOfPresents;
@@ -20,6 +21,9 @@ public class Sleigh implements Serializable{
         this.speed = 0;
         this.weight = 0;
         this.numberOfPresents = 0;
+        
+        this.description = "\nThis is Santa's sleigh, it's magic will "
+                + "\n help you make it around the world tonight!";
     }
 
     public double getSpeed() {

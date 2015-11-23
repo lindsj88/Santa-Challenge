@@ -7,6 +7,9 @@ package santachallenge.control;
 
 import santachallenge.SantaChallenge;
 import santachallenge.model.Game;
+import santachallenge.model.Inventory;
+import santachallenge.model.InventoryItem;
+import santachallenge.model.Item;
 import santachallenge.model.Map;
 import santachallenge.model.Player;
 import santachallenge.model.Sleigh;
@@ -24,80 +27,73 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        InventoryControl[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventoryItem(inventoryList;
         
         Sleigh sleigh = new Sleigh();
         game.setSleigh(sleigh);
         
-        Map map = MapContol.createMap();
+        Map map = MapControl.createMap();
         game.setMap(map);
         
-        MapControl.moveActorsToStartingLocation(map);
+        //MapControl.moveActorsToStartingLocation(map);
         
     }
         public static InventoryItem[] createInventoryList() {
-            System.out.println("*** called createInventoryList() in GameControl ***");
-            return null;
-        }
-        public static Inventoryitem[] createInventoryList() {
-            InventoryItem[] inventory =
-                    new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
-                    /* hat, cookies, gps, gloves, goggles, hot chocolate
+            InventoryItem[] inventory = new InventoryItem[6];
+            
+  /* hat, cookies, gps, gloves, goggles, hot chocolate
                        */
-            InvetoryItem hat = new InvetoryItem();
+            InventoryItem hat = new InventoryItem();
             hat.setDescription("Hat");
-            hat.setQuantityInStock(0);
-            hat.setRequiredAmount(0);
+            hat.setQuantity(1);
+            hat.setRequired(0);
             inventory[Item.hat.ordinal()] = hat;
             
-            InvetoryItem cookies = new InvetoryItem();
+            InventoryItem cookies = new InventoryItem();
             cookies.setDescription("Cookies");
-            cookies.setQuantityInStock(0);
-            cookies.setRequiredAmount(0);
+            cookies.setQuantity(1);
+            cookies.setRequired(0);
             inventory[Item.cookies.ordinal()] = cookies;
             
-            InvetoryItem gps = new InvetoryItem();
+            InventoryItem gps = new InventoryItem();
             gps.setDescription("GPS");
-            gps.setQuantityInStock(0);
-            gps.setRequiredAmount(0);
+            gps.setQuantity(1);
+            gps.setRequired(0);
             inventory[Item.gps.ordinal()] = gps;
             
-            InvetoryItem gloves = new InvetoryItem();
+            InventoryItem gloves = new InventoryItem();
             gloves.setDescription("Gloves");
-            gloves.setQuantityInStock(0);
-            gloves.setRequiredAmount(0);
+            gloves.setQuantity(1);
+            gloves.setRequired(0);
             inventory[Item.gloves.ordinal()] = gloves;
             
-            InvetoryItem goggles = new InvetoryItem();
+            InventoryItem goggles = new InventoryItem();
             goggles.setDescription("Goggles");
-            goggles.setQuantityInStock(0);
-            goggles.setRequiredAmount(0);
+            goggles.setQuantity(1);
+            goggles.setRequired(0);
             inventory[Item.goggles.ordinal()] = goggles;
             
-            InvetoryItem hotChocolate = new InvetoryItem();
+            InventoryItem hotChocolate = new InventoryItem();
             hotChocolate.setDescription("Hot Chocolate");
-            hotChocolate.setQuantityInStock(0);
-            hotChocolate.setRequiredAmount(0);
+            hotChocolate.setQuantity(1);
+            hotChocolate.setRequired(0);
             inventory[Item.hotChocolate.ordinal()] = hotChocolate;
             
             return inventory;
             
         }
         
-        public static InventoryItems[] getSortedInventoryList() {
+        public static InventoryItem[] getSortedInventoryList() {
             
-            InventoryItems[] originalInventoryList = 
-                    SantaChallenge.getCurrentGame().getInventory();
+            Inventory originalInventoryList = SantaChallenge.getCurrentGame().getInventory();
             
             InventoryItem[] inventoryList = originalInventoryList.clone();
             
             InventoryItem tempInventoryItem;
             for (int i=0; i < inventoryList.length-1; i++) {
                 for (int j=0; j<inventoryList.length-1-i; j++) {
-                    if(inventoryList[j].getDescription().
-                            compareToIgnoreCase(inventoryList[j + 1].
-                                    getDescription() > 0) {
+                    if(inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription() > 0) {
                         tempInventoryItem = inventoryList[j];
                         inventoryList[j] = inventoryList[j + 1];
                         inventoryList[j + 1] = tempInventoryItem;
@@ -106,4 +102,5 @@ public class GameControl {
             }
             return inventoryList;
         }
-    }
+        
+}

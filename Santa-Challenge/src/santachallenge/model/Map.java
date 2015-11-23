@@ -23,7 +23,7 @@ public class Map implements Serializable {
     }
     public Map(int rows, int columns) {
     
-        if (rows < 1 || columns < 1) {
+        if (rows < 0 || columns < 0) {
             System.out.println("Not a valid location");
             return;
         }
@@ -42,6 +42,7 @@ public class Map implements Serializable {
             locations[row][column] = location;
         }
     }
+       
 }
     public Location[][] getLocations() {
         return locations;
@@ -50,4 +51,14 @@ public class Map implements Serializable {
     public void setLocations(Location[][] locations) {
         this.locations = locations;
     }
+    
+     public int getRows() {
+        return rows;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+    
+    
 }

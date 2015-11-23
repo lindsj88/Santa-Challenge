@@ -17,7 +17,7 @@ public class Location implements Serializable{
     private int row;
     private int column;
     private boolean visited;
-    private Scene scene;
+    private Scene scenes;
     private ArrayList<Santa> santa;
     private String name;
      
@@ -58,13 +58,22 @@ public class Location implements Serializable{
     }
 
     public Scene getScene() {
-        return scene;
+        return scenes;
     }
 
-    public void setScene(Scene scene) {
-        this.scene = scene;
+    public void setScene(Scene scenes) {
+        this.scenes = scenes;
+    }
+
+    public ArrayList<Santa> getSanta() {
+        return santa;
+    }
+
+    public void setSanta(ArrayList<Santa> santa) {
+        this.santa = santa;
     }
      
+    
 
     @Override
     public int hashCode() {

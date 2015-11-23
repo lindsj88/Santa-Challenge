@@ -27,6 +27,7 @@ public class Game implements Serializable{
     public void setMap(Map[] map) {
         this.map = map;
     }
+    
     private Inventory inventory;
 
     public Inventory getInventory() {
@@ -119,6 +120,14 @@ public class Game implements Serializable{
     } 
 
     public void setInventory(InventoryControl[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(santachallenge.model.Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Scene getScene() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

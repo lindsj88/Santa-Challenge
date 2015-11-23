@@ -5,11 +5,14 @@
  */
 package santachallenge.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
+import santachallenge.model.Inventory;
+import santachallenge.model.InventoryItem;
 import santachallenge.model.Location;
-
+import santachallenge.model.Map;
 /**
  *
  * @author Lindsey
@@ -80,6 +83,7 @@ public class GameMenuView extends View {
         
         switch (selection){
             case 'V': //view map
+                Map map = Map.getMap();
                 this.displayViewMap();
                 break;
             case 'S': //select resource
@@ -106,14 +110,10 @@ public class GameMenuView extends View {
     }
     
     private void displayViewMap() {
-        Location[][] locations = SantaChallenge.getCurrentGame().
-                getMap().getLocations();
+        Location[][] locations = map.getLocations();
         System.out.println("Locations");
-        
-        //display row/colum numbers
-        
-        //FOR every row
-        for (int i=0; i<locations.; i++) {
+      
+        for (int i=0; i < locations.length; i++) {
             System.out.println("----------------");
             
             for(int j=0; j<locations.length; j++) {
@@ -135,16 +135,17 @@ public class GameMenuView extends View {
     }
 
     private void displaySelectInventory() {
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        System.out.println("n\List of Inventory");
+       InventoryItem[] inventory = GameControl.getInventoryList();
+        
+        System.out.println("\nInventory Items");
         System.out.println("Description" + "\t" + 
                             "Required" + "\t" +
                             "In stock");
         
         for (InventoryItem inventoryItem : inventory) {
             System.out.println(inventoryItem.getDescription() + "\t " +
-                    inventoryItem.getRequiredAmount() + "\t " +
+                    inventoryItem.getRequired() + "\t " +
                     inventoryItem.getQuantity());
         }
     }

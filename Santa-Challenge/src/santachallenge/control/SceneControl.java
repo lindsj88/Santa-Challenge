@@ -13,8 +13,9 @@ import santachallenge.model.Scene;
  *
  * @author Lindsey
  */
-public class SceneControl {
-    private static Scene[] createScenes() {
+/*public class SceneControl {
+    
+   private static Scene[] createScenes() {
         Game game = SantaChallenge.getCurrentGame();
         
         Scene[] scenes = new Scene[MapControl.SceneType.values().length];
@@ -24,8 +25,7 @@ public class SceneControl {
                 "\n Welcome to the North Pole. Here you can"
                         + "help Santa get ready on Christmas"
                         + "Eve");
-        startingScene.setMapSymbol("ST");
-        startingScene.setBlocked(false);
+        startingScene.setCoordinates(0,0);
         startingScene.setTravelTime(240);
         scenes[MapControl.SceneType.start.ordinal()] = startingScene;
         
