@@ -9,10 +9,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
+import santachallenge.control.MapControl;
+import santachallenge.model.Game;
 import santachallenge.model.Inventory;
 import santachallenge.model.InventoryItem;
 import santachallenge.model.Location;
 import santachallenge.model.Map;
+import santachallenge.model.Scene;
 /**
  *
  * @author Lindsey
@@ -83,7 +86,8 @@ public class GameMenuView extends View {
         
         switch (selection){
             case 'V': //view map
-                Map map = Map.getMap();
+                Game game = SantaChallenge.getCurrentGame();
+                //Map map = game.getMap();
                 this.displayViewMap();
                 break;
             case 'S': //select resource
@@ -110,17 +114,19 @@ public class GameMenuView extends View {
     }
     
     private void displayViewMap() {
-        Location[][] locations = map.getLocations();
+        Scene[][] locations = MapControl.getInsertionSortedScenes();
         System.out.println("Locations");
-      
+        System.out.println("1 2 3 4 5");
+        
         for (int i=0; i < locations.length; i++) {
             System.out.println("----------------");
             
             for(int j=0; j<locations.length; j++) {
-                System.out.println("|");
+                System.out.println("| | | | |");
+                ////get sorted scenes
                 System.out.print(locations[i][j].getScene());
             }
-            System.out.print("?");
+            System.out.print("");
         }
         System.out.println("-------------------------------");
     }
@@ -161,6 +167,16 @@ public class GameMenuView extends View {
      private void displayFlyingSpeedControl() {
         FlyingSpeedView flyingSpeedView = new FlyingSpeedView();
         flyingSpeedView.display();
+    }
+
+    private static class map {
+
+        private static Location[][] getLocations() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public map() {
+        }
     }
 
    

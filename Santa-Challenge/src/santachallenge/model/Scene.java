@@ -93,6 +93,10 @@ throw new UnsupportedOperationException("Not supported yet.");
     public void setTime() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public boolean getScene() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public enum SceneType {
     start,
