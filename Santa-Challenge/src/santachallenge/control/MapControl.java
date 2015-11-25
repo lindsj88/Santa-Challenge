@@ -22,6 +22,7 @@ public class MapControl {
         
         Map map = new Map(5, 5); 
         Scene[] scenes = createScenes();
+        map.setScene(scenes);
         assignScenesToLocations(map, scenes);
         
         return map;
@@ -29,34 +30,35 @@ public class MapControl {
     
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
-          /*locations[0][0].setScene(scenes.start);
-        locations[0][1].setScene(Scene.location1);
-        locations[0][2].setScene(Scene.location2);
-        locations[0][3].setScene(Scene.location3);
-        locations[0][4].setScene(Scene.location4);
-        locations[0][5].setScene(Scene.location5);
-        locations[1][0].setScene(Scene.location6);
-        locations[1][1].setScene(Scene.location7);
-        locations[1][2].setScene(Scene.location8);
-        locations[1][3].setScene(Scene.location9);
-        locations[1][4].setScene(Scene.location10);
-        locations[1][5].setScene(Scene.location11);
-        locations[2][0].setScene(Scene.location12);
-        locations[2][1].setScene(Scene.location13);
-        locations[2][2].setScene(Scene.location14);
-        locations[2][3].setScene(Scene.location14);
-        locations[2][4].setScene(Scene.location15);
-        locations[2][5].setScene(Scene.location16);
-        locations[3][0].setScene(Scene.location17);
-        locations[3][1].setScene(Scene.location18);
-        locations[3][2].setScene(Scene.location19);
-        locations[3][3].setScene(Scene.location20);
-        locations[3][4].setScene(Scene.location21);
-        locations[3][5].setScene(Scene.location22);
-        locations[4][0].setScene(Scene.location23);
-        locations[4][0].setScene(Scene.finish);
-    }*/
+        
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.location1.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.location2.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.location3.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.location4.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.location5.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.location6.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.location7.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.location8.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.location9.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.location10.ordinal()]);
+        locations[1][5].setScene(scenes[SceneType.location11.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.location12.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.location13.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.location14.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.location15.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.location16.ordinal()]);
+        locations[2][5].setScene(scenes[SceneType.location17.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.location18.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.location19.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.location20.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.location21.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.location22.ordinal()]);
+        locations[3][5].setScene(scenes[SceneType.location23.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.location24.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.finish.ordinal()]);
     }
+    
    
     
      private static Scene[] createScenes() {
@@ -74,44 +76,195 @@ public class MapControl {
         
         Scene location1 = new Scene();
         location1.setDescription(
-                "\n ");
+                "\n Los Angeles, USA");
         location1.setCoordinates();
         location1.setTime();
         location1.setDistance(0);
-        scenes[SceneType.finish.ordinal()] = location1;
+        scenes[SceneType.location1.ordinal()] = location1;
         
         Scene location2 = new Scene();
         location2.setDescription(
-                "\n ");
+                "\n Seattle, USA");
         location2.setCoordinates();
         location2.setTime();
         location2.setDistance(0);
-        scenes[SceneType.finish.ordinal()] = location2;
+        scenes[SceneType.location2.ordinal()] = location2;
         
         Scene location3 = new Scene();
         location3.setDescription(
-                "\n ");
+                "\n Ottawa, Canada");
         location3.setCoordinates();
         location3.setTime();
         location3.setDistance(0);
-        scenes[SceneType.finish.ordinal()] = location3;
+        scenes[SceneType.location3.ordinal()] = location3;
         
         Scene location4 = new Scene();
         location4.setDescription(
-                "\n ");
+                "\n Anchorage, Alaska");
         location4.setCoordinates();
         location4.setTime();
         location4.setDistance(0);
-        scenes[SceneType.finish.ordinal()] = location4;
+        scenes[SceneType.location4.ordinal()] = location4;
         
         Scene location5 = new Scene();
         location5.setDescription(
-                "\n ");
+                "\n Mexico City, Mexico");
         location5.setCoordinates();
         location5.setTime();
         location5.setDistance(0);
-        scenes[SceneType.finish.ordinal()] = location5;
+        scenes[SceneType.location5.ordinal()] = location5;
         
+        Scene location6 = new Scene();
+        location5.setDescription(
+                "\n Sao Paulo, Brazil");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location6.ordinal()] = location6;
+        
+        Scene location7 = new Scene();
+        location5.setDescription(
+                "\n Santiago, Chile");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location7.ordinal()] = location7;
+        
+        Scene location8 = new Scene();
+        location5.setDescription(
+                "\n Buenas Aires, Argentina");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location8.ordinal()] = location8;
+        
+        Scene location9 = new Scene();
+        location5.setDescription(
+                "\n Bogota, Columbia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location9.ordinal()] = location9;
+        
+        Scene location10 = new Scene();
+        location5.setDescription(
+                "\n Cape Town, South Africa");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location10.ordinal()] = location10;
+        
+        Scene location11 = new Scene();
+        location5.setDescription(
+                "\n Nairobi, Kenya");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location11.ordinal()] = location11;
+        
+        Scene location12 = new Scene();
+        location5.setDescription(
+                "\n Lagos, Nigeria");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location12.ordinal()] = location12;
+        
+        Scene location13 = new Scene();
+        location5.setDescription(
+                "\n Casablanca, Morocco");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location13.ordinal()] = location13;
+        
+        Scene location14 = new Scene();
+        location5.setDescription(
+                "\n Moscow, Russia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location14.ordinal()] = location14;
+        
+        Scene location15 = new Scene();
+        location5.setDescription(
+                "\n London, England");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location15.ordinal()] = location15;
+        
+        Scene location16 = new Scene();
+        location5.setDescription(
+                "\n Madrid, Spain");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location16.ordinal()] = location16;
+        
+        Scene location17 = new Scene();
+        location5.setDescription(
+                "\n Prague, Czech Republic");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location17.ordinal()] = location17;
+        
+        Scene location18 = new Scene();
+        location5.setDescription(
+                "\n Mumbai, India");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location18.ordinal()] = location18;
+        
+        Scene location19 = new Scene();
+        location5.setDescription(
+                "\n Hong Kong, China");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location19.ordinal()] = location19;
+        
+        Scene location20 = new Scene();
+        location5.setDescription(
+                "\n Ulaanbaatar, Mongolia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location20.ordinal()] = location20;
+        
+        Scene location21 = new Scene();
+        location5.setDescription(
+                "\n Bangkok, Thailand");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location21.ordinal()] = location21;
+        
+        Scene location22 = new Scene();
+        location5.setDescription(
+                "\n Perth, Austrailia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location22.ordinal()] = location22;
+        
+        Scene location23 = new Scene();
+        location5.setDescription(
+                "\n Melbourne, Australia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location23.ordinal()] = location23;
+        
+        Scene location24 = new Scene();
+        location5.setDescription(
+                "\n Brisbane, Autralia");
+        location5.setCoordinates();
+        location5.setTime();
+        location5.setDistance(0);
+        scenes[SceneType.location24.ordinal()] = location24;
         //if correct. add rest of locations
         
         Scene finish = new Scene();
@@ -126,22 +279,21 @@ public class MapControl {
         return scenes;
     }
      //insertion sort algorithm
-     public static Scene[] getInsertionSortedScenes() {
+     public static Scene[] getInsertionSortedScenes(Scene[] originalScene) {
          int temp;
-         Scene[] originalScene = SantaChallenge.getCurrentGame.getScene();
          
-         Scene[] originalScene = originalScene.clone();
+         Scene[] scenes = originalScene.clone();
          Scene tempScene;
          
-        for(int i = 0; i < Scene.length; i++) {
-            for (int j = 0; j > 0; j--){
-                if(Scene[j] < Scene[j-1]{
-                    tempScene = Scene[j];
-                    Scene[j] = Scene[j-1];
-                    Scene[j-1] = tempScene;
+        for(int i = 0; i < scenes.length-1; i++) {
+            for (int j = 0; j < scenes.length; j--){
+                if(scenes[j] < scenes[j-1]) {
+                    tempScene = scenes[j];
+                    scenes[j] = scenes[j-1];
+                    scenes[j-1] = tempScene;
                 }
             }
         }
-      return Scene;  
+      return scenes;  
      }
 }

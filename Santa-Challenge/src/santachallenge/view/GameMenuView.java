@@ -87,7 +87,6 @@ public class GameMenuView extends View {
         switch (selection){
             case 'V': //view map
                 Game game = SantaChallenge.getCurrentGame();
-                //Map map = game.getMap();
                 this.displayViewMap();
                 break;
             case 'S': //select resource
@@ -114,22 +113,37 @@ public class GameMenuView extends View {
     }
     
     private void displayViewMap() {
-        Scene[][] locations = MapControl.getInsertionSortedScenes();
-        System.out.println("Locations");
-        System.out.println("1 2 3 4 5");
         
-        for (int i=0; i < locations.length; i++) {
-            System.out.println("----------------");
+        Game game = SantaChallenge.getCurrentGame();
+        Map map = SantaChallenge.getCurrentGame().getMap();
+        int rows = map.getRows();
+        int columns = map.getColumns();
+        Location[][] locations = map.getLocations();
+        
+        // Display title
+        System.out.println("\n Locations");
+        
+        // Display map
+        System.out.println(" 1  2  3  4  5");
+        
+        for (int i=0; i < rows; i++) {
+            System.out.println("--------------");
             
-            for(int j=0; j<locations.length; j++) {
-                System.out.println("| | | | |");
-                ////get sorted scenes
+            for (int j=0; j < columns; j++) {
+                System.out.print("  |  |  |  |  ");
+                
                 System.out.print(locations[i][j].getScene());
+                
+                if (locations[i][j].getVisited()) {
+                    System.out.print(" X ");
+                } else {
+                    System.out.print("  ");
+                }
+                
             }
-            System.out.print("");
+            System.out.println("\n-------------");
         }
-        System.out.println("-------------------------------");
-    }
+}
 
     
     private void displayLoadSleigh() {

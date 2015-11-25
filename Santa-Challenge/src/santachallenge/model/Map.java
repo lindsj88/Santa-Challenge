@@ -17,6 +17,7 @@ public class Map implements Serializable {
     private int rows;
     private int columns;
     private Location[][] locations;
+    private Scene[] scenes;
 
     public Map() {
         
@@ -58,6 +59,14 @@ public class Map implements Serializable {
 
     public int getColumns() {
         return columns;
+    }
+
+    public Scene[] getScene() {
+        return scenes;
+    }
+
+    public void setScene(Scene[] scene) {
+        this.scenes = scenes;
     }
     
     

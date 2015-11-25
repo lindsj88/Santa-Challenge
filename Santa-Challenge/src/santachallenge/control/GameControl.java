@@ -27,8 +27,8 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        InventoryItem[] inventoryList = GameControl.createInventoryList();
-        game.setInventoryItem(inventoryList;
+        InventoryItem[] inventoryItem = GameControl.createInventoryList();
+        game.setInventoryItem(inventoryItem);
         
         Sleigh sleigh = new Sleigh();
         game.setSleigh(sleigh);
@@ -86,17 +86,17 @@ public class GameControl {
         
         public static InventoryItem[] getSortedInventoryList() {
             
-            Inventory originalInventoryList = SantaChallenge.getCurrentGame().getInventory();
+            InventoryItem[] originalInventoryList = SantaChallenge.getCurrentGame().getInventoryItem();
             
             InventoryItem[] inventoryList = originalInventoryList.clone();
             
-            InventoryItem tempInventoryItem;
+            InventoryItem tempInventoryList;
             for (int i=0; i < inventoryList.length-1; i++) {
-                for (int j=0; j<inventoryList.length-1-i; j++) {
-                    if(inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription() > 0) {
-                        tempInventoryItem = inventoryList[j];
+                for (int j=0; j < inventoryList.length-1-i; j++) {
+                    if(inventoryList[j].getDescription().compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+                        tempInventoryList = inventoryList[j];
                         inventoryList[j] = inventoryList[j + 1];
-                        inventoryList[j + 1] = tempInventoryItem;
+                        inventoryList[j + 1] = tempInventoryList;
                     }
                 }
             }

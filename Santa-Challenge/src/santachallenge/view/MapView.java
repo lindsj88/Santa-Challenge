@@ -15,9 +15,9 @@ public class MapView extends View{
      public MapView() {
         super ("\n"
                + "\n----------------------------"
-               + "\n         Game Play Menu          "
+               + "\n      Location Menu         "
                + "\n----------------------------"
-               + "\nA - Noth Pole"
+               + "\nA - North Pole"
                + "\nB - Los Angeles, USA"
                + "\nC - Seattle, USA"
                + "\nD - Ottawa, Canada"

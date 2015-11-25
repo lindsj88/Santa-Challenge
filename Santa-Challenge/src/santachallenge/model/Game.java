@@ -18,24 +18,60 @@ public class Game implements Serializable{
     private String playerName;
     private Sleigh sleigh;
     private Player player;
-    private Map[] map;
+    private Map map;
+    private InventoryItem[] inventoryItem;
+    private Santa santa;
+    
+    
+    public Game() {
+    }
 
-    public Map[] getMap() {
+    public double getTime() {
+        return time;
+    }
+
+    public void setTime(double time) {
+        this.time = time;
+    }
+    
+    public String getPlayerName() {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;   
+    }
+    
+    public Sleigh getSleigh() {
+        return sleigh;
+    }
+
+    public void setSleigh(Sleigh sleigh) {
+        this.sleigh = sleigh;
+    }
+    
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
         return map;
     }
 
-    public void setMap(Map[] map) {
+    public void setMap(Map map) {
         this.map = map;
     }
-    
-    private Inventory inventory;
 
-    public Inventory getInventory() {
-        return inventory;
+    public InventoryItem[] getInventoryItem() {
+        return inventoryItem;
     }
 
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setInventoryItem(InventoryItem[] inventoryItem) {
+        this.inventoryItem = inventoryItem;
     }
 
     public String[] getSanta() {
@@ -47,46 +83,7 @@ public class Game implements Serializable{
     }
     private String[] Santa;
 
-    public Sleigh getSleigh() {
-        return sleigh;
-    }
 
-    public void setSleigh(Sleigh sleigh) {
-        this.sleigh = sleigh;
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public Map getMap(Map map) {
-        return map;
-    }
-
-    public Game() {
-    }
-
-    public double getTime() {
-        return time;
-    }
-
-    public void setTime(double time) {
-        this.time = time;
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-        
-        
-    }
 
     @Override
     public int hashCode() {

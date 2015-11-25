@@ -25,6 +25,10 @@ import santachallenge.view.StartProgramView;
 public class SantaChallenge {
     private static Game currentGame = null;
 
+    /**
+     *
+     * @return
+     */
     public static Game getCurrentGame() {
         return currentGame;
     }
