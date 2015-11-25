@@ -24,6 +24,7 @@ import santachallenge.view.StartProgramView;
  */
 public class SantaChallenge {
     private static Game currentGame = null;
+    private static Player player = null;
 
     /**
      *
@@ -44,13 +45,19 @@ public class SantaChallenge {
     public static void setPlayer(Player player) {
         SantaChallenge.player = player;
     }
-    private static Player player = null;
+
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView ();
+        try {
         startProgramView.startProgram();
-    } 
+    } catch (Throwable te) {
+        System.out.println(te.getMessage());
+        te.printStackTrace();
+        startProgramView.startProgram();
+    }
+}
 }

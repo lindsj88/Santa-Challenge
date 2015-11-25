@@ -5,10 +5,13 @@
  */
 package santachallenge.control;
 
+import exceptions.MapControlException;
+import java.awt.Point;
 import santachallenge.SantaChallenge;
 import santachallenge.model.Game;
 import santachallenge.model.Location;
 import santachallenge.model.Map;
+import santachallenge.model.Santa;
 import santachallenge.model.Scene;
 import santachallenge.model.Scene.SceneType;
 
@@ -26,6 +29,21 @@ public class MapControl {
         assignScenesToLocations(map, scenes);
         
         return map;
+    }
+    
+    public static void moveSantaToStart(Santa santa, Point coordinates)
+        throws MapControlException {
+        
+        Map map = SantaChallenge.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow < 0 || newRow >= map.getRows() || newColumn < 0 || newColum >= map.getColumns()){
+            throw new MapControlException("Not a valid location "
+                    + coordinates.x + ", " + coordinates.y 
+                    + "location is out of bounds");
+                     
+        }
     }
     
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
