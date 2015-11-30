@@ -5,6 +5,8 @@
  */
 package santachallenge.control;
 
+import exceptions.FeedSantaControlException;
+
 /**
  *
  * @author Lindsey
@@ -12,21 +14,32 @@ package santachallenge.control;
 public class FeedSantaControl {
     private double total;
    
-    public double IsSantaFull(double calories, double age) {
+    public double IsSantaFull(double calories, double age) 
+    throws FeedSantaControlException {
     
         
      if (calories < 2001) {
-       return -1;
+         throw new FeedSantaControlException("You didn't feed Santa enough,"
+                 + "he's still hungry");
+       //return -1;
      }
      
      if (age < 0 || age > 100) {
-         return -1;
+         throw new FeedSantaControlException("You didn't feed Santa enough,"
+                 + "at his age he needs more calories!");
+         //return -1;
 
      }
      
      double needed = 10 * 136 + 6.25 * 183 - 5 * age + 5;
      double total = calories - needed;
      
+    
+     try {
+         total = Double.parseDouble();
+     } catch (NumberFormatException nf) {
+         System.out.println("\n You must enter valid numbers");
+     }
      return total;
      
     }

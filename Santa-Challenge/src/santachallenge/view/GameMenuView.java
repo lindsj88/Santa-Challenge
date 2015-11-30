@@ -5,6 +5,7 @@
  */
 package santachallenge.view;
 
+import exceptions.MapControlException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import santachallenge.SantaChallenge;
@@ -28,7 +29,8 @@ public class GameMenuView extends View {
                + "\n----------------------------"
                + "\n         Game Play Menu          "
                + "\n----------------------------"
-               + "\nV - View Map/Pick a location"
+               + "\nV - View Map"
+               + "\nM - Move Santa"
                + "\nL - Load Sleigh"
                + "\nS - Select Inventory"
                + "\nC - Choose Santa's Partner"
@@ -86,8 +88,10 @@ public class GameMenuView extends View {
         
         switch (selection){
             case 'V': //view map
-                Game game = SantaChallenge.getCurrentGame();
                 this.displayViewMap();
+                break;
+            case 'M':
+                this.displayMoveSanta();
                 break;
             case 'S': //select resource
                 this.displaySelectInventory();
@@ -144,6 +148,16 @@ public class GameMenuView extends View {
             System.out.println("\n-------------");
         }
 }
+    
+    private void displayMoveSanta() {
+        Map map = SantaChallenge.getCurrentGame().getMap();
+        SantaControl santa = new SantaControl();
+        try {
+            santa.displayMoveSanta();
+        } catch (MapControlException me) {
+            System.out.println(me.getMessage());
+        }
+    }
 
     
     private void displayLoadSleigh() {

@@ -31,14 +31,25 @@ public class MapControl {
         return map;
     }
     
-    public static void moveSantaToStart(Santa santa, Point coordinates)
+    public static int moveSantaToStart(Map map) 
+            throws MapControlException{
+        Santa[] santas = Santa.values();
+        
+        for(Santa santa: santas) {
+            Point coordinates = santa.getCoordinates();
+            MapControl.moveSantaToLocation(santa, coordinates);
+        }
+        return 0;
+    }
+    
+    public static void moveSantaToLocation(Santa santa, Point coordinates)
         throws MapControlException {
         
         Map map = SantaChallenge.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
         int newColumn = coordinates.y-1;
         
-        if (newRow < 0 || newRow >= map.getRows() || newColumn < 0 || newColum >= map.getColumns()){
+        if (newRow < 0 || newRow >= map.getRows() || newColumn < 0 || newColumn >= map.getColumns()){
             throw new MapControlException("Not a valid location "
                     + coordinates.x + ", " + coordinates.y 
                     + "location is out of bounds");
