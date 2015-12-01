@@ -30,8 +30,7 @@ public class FeedSantaControl {
          //return -1;
 
      }
-      FoodItem[] foodItem = FeedSantaControl.createFoodList();
-        game.setFoodItem(foodItem);
+     
      
      double needed = 10 * 136 + 6.25 * 183 - 5 * age + 5;
      double total = calories - needed;
@@ -45,6 +44,7 @@ public class FeedSantaControl {
         
         System.out.println("Santa ate " + total + " calories");
     }
-    
+    FoodItem[] foodItem = FeedSantaControl.createFoodList();
+        game.setFoodItem(foodItem);
     
 }
