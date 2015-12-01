@@ -108,7 +108,9 @@ public class HelpMenuView extends View{
     }
     
     private void displayFeed() {
-         System.out.println("*** displayfeed function called***");
+         FeedSantaView FeedView = new FeedSantaView();
+         FeedView.display();
+                 //System.out.println("*** displayfeed function called***");
     }
     
     private void displayLoad() {

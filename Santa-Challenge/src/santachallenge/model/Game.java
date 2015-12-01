@@ -22,6 +22,7 @@ public class Game implements Serializable{
     private Map map;
     private InventoryItem[] inventoryItem;
     private Santa santa;
+    public Scene[] getScenes;
     
     
     public Game() {

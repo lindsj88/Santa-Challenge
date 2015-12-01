@@ -5,6 +5,7 @@
  */
 package santachallenge.view;
 
+import exceptions.FlyingSpeedControlException;
 import santachallenge.control.FlyingSpeedControl;
 
 /**
@@ -14,7 +15,7 @@ import santachallenge.control.FlyingSpeedControl;
 public class FlyingSpeedView extends View {
     
     
-    public FlyingSpeedView() {
+    public FlyingSpeedView() throws FlyingSpeedControlException{
         
         super ("\n"
                + "\n----------------------------"
@@ -59,10 +60,18 @@ public class FlyingSpeedView extends View {
         return false;
     }
 
+    
 
- private void displayFlyingSpeedControl() {
+ private int displayFlyingSpeedControl() {
         int speed = 75;
+        
         FlyingSpeedControl flyingControl = new FlyingSpeedControl();
         flyingControl.display();
+    try {
+         speed = Double.parseDouble();
+     } catch (NumberFormatException nf) {
+         System.out.println("\n You must enter a valid number");
+     }
+        return speed;
  }
 }

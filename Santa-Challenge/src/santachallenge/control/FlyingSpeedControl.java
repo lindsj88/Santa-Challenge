@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package santachallenge.control;
+import exceptions.FlyingSpeedControlException;
 
 /**
  *
@@ -11,13 +12,17 @@ package santachallenge.control;
  */
 public class FlyingSpeedControl {
     private double total;
-    public double FlyingSpeed (double speed) {
+    public double FlyingSpeed (double speed) 
+    throws FlyingSpeedControlException {
+        
         if (speed < 50) {
-       return -1;
+       throw new FlyingSpeedControlException("You didn't pick a fast enough,"
+                 + "speed");
      }
      
      if (speed > 100) {
-         return -1;
+         throw new FlyingSpeedControlException("Whoa, I don't think Santa can go"
+                 + "that fast!");
 
      }
      

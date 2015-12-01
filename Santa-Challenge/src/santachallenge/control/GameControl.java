@@ -102,5 +102,9 @@ public class GameControl {
             }
             return inventoryList;
         }
+
+    public static InventoryItem[] getInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
 }

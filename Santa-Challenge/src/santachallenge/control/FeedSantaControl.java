@@ -36,12 +36,7 @@ public class FeedSantaControl {
      double needed = 10 * 136 + 6.25 * 183 - 5 * age + 5;
      double total = calories - needed;
      
-    
-     try {
-         total = Double.parseDouble();
-     } catch (NumberFormatException nf) {
-         System.out.println("\n You must enter valid numbers");
-     }
+ 
      return total;
      
     }

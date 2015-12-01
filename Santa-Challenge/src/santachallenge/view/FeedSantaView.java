@@ -116,10 +116,16 @@ public class FeedSantaView extends View {
         }
       return foods;  
 
- private void displayFeedSantaControl() {
+ private int displayFeedSantaControl() {
         int calories = 2500;
         FeedSantaControl feedControl = new FeedSantaControl();
         feedControl.display();
+  try {
+         calories = int.parseInt();
+     } catch (NumberFormatException nf) {
+         System.out.println("\n You must enter a valid number");
+     }
+        return calories;
  }
  
 }

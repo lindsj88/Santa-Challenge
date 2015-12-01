@@ -5,21 +5,27 @@
  */
 package santachallenge.control;
 
+import exceptions.FlyingSpeedControlException;
+import exceptions.LoadSleighControlException;
+
 /**
  *
  * @author Lindsey
  */
 public class LoadSleighControl {
-     public double SledWeight (double weight, double reindeerNumber) {
+    
+     public double SledWeight (double weight, double reindeerNumber) 
+     throws LoadSleighControlException {
+         
         if (weight > 800) {
-       return -1;
+       throw new LoadSleighControlException("I don't think the reindeer can pull that much weight");
      }
+     
      
      if (weight < 0) {
-         return -1;
-
+         throw new LoadSleighControlException("That's not a real number");
      }
-     
+
      double reindeerStrength = 100 *  reindeerNumber;
      double liftOff = 800 + 500 - reindeerStrength;
      

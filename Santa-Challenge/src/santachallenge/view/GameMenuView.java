@@ -5,9 +5,13 @@
  */
 package santachallenge.view;
 
+import exceptions.FeedSantaControlException;
+import exceptions.FlyingSpeedControlException;
 import exceptions.MapControlException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
 import santachallenge.control.MapControl;
@@ -102,11 +106,23 @@ public class GameMenuView extends View {
              case 'C': //choose santa
                 this.displayChooseSanta();
                 break;
-                 case 'Z': //choose santa
+                 case 'Z': {
+            try {
+                //choose santa
                 this.displayFlyingSpeedControl();
+            } catch (FlyingSpeedControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
              case 'F':
-               this.displayFeedSanta();
+        {
+            try {
+                this.displayFeedSanta();
+            } catch (FeedSantaControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
             case 'E': //exit
                 return true;
             default:
@@ -119,7 +135,7 @@ public class GameMenuView extends View {
     private void displayViewMap() {
         
         Game game = SantaChallenge.getCurrentGame();
-        Map map = SantaChallenge.getCurrentGame().getMap();
+        Map map = (Map) SantaChallenge.getCurrentGame().getMap();
         int rows = map.getRows();
         int columns = map.getColumns();
         Location[][] locations = map.getLocations();
@@ -150,18 +166,15 @@ public class GameMenuView extends View {
 }
     
     private void displayMoveSanta() {
-        Map map = SantaChallenge.getCurrentGame().getMap();
+        Map map = (Map) SantaChallenge.getCurrentGame().getMap();
         SantaControl santa = new SantaControl();
-        try {
-            santa.displayMoveSanta();
-        } catch (MapControlException me) {
-            System.out.println(me.getMessage());
-        }
+        santa.displayMoveSanta();
     }
 
     
     private void displayLoadSleigh() {
-         System.out.println("*** displayLoadSleigh function called***");
+        LoadSleighView loadSleighView = new LoadSleighView();
+        loadSleighView.display();
     }
     
     private void displayChooseSanta() {
@@ -188,11 +201,11 @@ public class GameMenuView extends View {
         inventoryMenu.display();
     }*/
 
-    private void displayFeedSanta() {
+    private void displayFeedSanta() throws FeedSantaControlException{
         FeedSantaView feedSantaView = new FeedSantaView();
         feedSantaView.display();
     }
-     private void displayFlyingSpeedControl() {
+     private void displayFlyingSpeedControl() throws FlyingSpeedControlException  {
         FlyingSpeedView flyingSpeedView = new FlyingSpeedView();
         flyingSpeedView.display();
     }

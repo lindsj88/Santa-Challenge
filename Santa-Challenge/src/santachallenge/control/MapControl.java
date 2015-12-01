@@ -45,7 +45,7 @@ public class MapControl {
     public static void moveSantaToLocation(Santa santa, Point coordinates)
         throws MapControlException {
         
-        Map map = SantaChallenge.getCurrentGame().getMap();
+        Map map = (Map) SantaChallenge.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
         int newColumn = coordinates.y-1;
         
@@ -308,21 +308,22 @@ public class MapControl {
         return scenes;
     }
      //insertion sort algorithm
-     public static Scene[] getInsertionSortedScenes(Scene[] originalScene) {
-         int temp;
+     public static Scene[] getInsertionSortedScenes() {
          
-         Scene[] scenes = originalScene.clone();
-         Scene tempScene;
+         Scene[] originalSceneList = SantaChallenge.getCurrentGame().getScenes;
+         Scene[] sceneList = originalSceneList.clone();
          
-        for(int i = 0; i < scenes.length-1; i++) {
-            for (int j = 0; j < scenes.length; j--){
-                if(scenes[j] < scenes[j-1]) {
-                    tempScene = scenes[j];
-                    scenes[j] = scenes[j-1];
-                    scenes[j-1] = tempScene;
+         Scene tempSceneList;
+         
+        for(int i = 0; i < sceneList.length-1; i++) {
+            for (int j = 0; j < sceneList.length - i; j--){
+                if(sceneList[j].getDescription().compareToIgnoreCase(sceneList[j+1].getDescription()) < 0) {
+                    tempSceneList = sceneList[j];
+                    sceneList[j] = sceneList[j+1];
+                    sceneList[j+1] = tempSceneList;
                 }
             }
         }
-      return scenes;  
+      return sceneList;  
      }
 }
