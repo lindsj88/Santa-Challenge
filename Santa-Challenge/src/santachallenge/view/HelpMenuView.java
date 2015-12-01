@@ -114,7 +114,7 @@ public class HelpMenuView extends View{
     }
     
     private void displayLoad() {
-         System.out.println("*** displayLoad function called***");
+         System.out.println("***Help Santa load is sleigh, be careful not to make it too heavy or it will slow him down and he wont make it around the world in time***");
     }
 }
 

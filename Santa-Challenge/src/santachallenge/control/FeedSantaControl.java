@@ -44,7 +44,7 @@ public class FeedSantaControl {
         
         System.out.println("Santa ate " + total + " calories");
     }
-    FoodItem[] foodItem = FeedSantaControl.createFoodList();
-        game.setFoodItem(foodItem);
+    //FoodItem[] foodItem = FeedSantaControl.createFoodList();
+      //  game.setFoodItem(foodItem);
     
 }

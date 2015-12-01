@@ -100,21 +100,21 @@ public class FeedSantaView extends View {
         }
         return false;
     }
- public static Food[] getInsertionSortedFoods() {
+public static Food[] getInsertionSortedFoods() {
          
          Food[] Food = originalFood.clone();
-         Food tempFood;
+       Food tempFood;
          
-        for(int i = 0; i < foods.length-1; i++) {
-            for (int j = 0; j < food.length; j--){
-                if(foods[j] < foods[j-1]) {
-                    tempfood = foods[j];
-                    foods[j] = foods[j-1];
-                    foods[j-1] = tempfood;
-                }
-            }
-        }
-      return foods;  
+       for(int i = 0; i < Food.length-1; i++) {
+          for (int j = 0; j < Food.length; j--){
+             if(Food[j] < Food[j-1]) {
+               tempFood = Food[j];
+             Food[j] = Food[j-1];
+           Food[j-1] = tempFood;
+      }
+      }
+      }
+      return Food;  
 
  private int displayFeedSantaControl() {
         int calories = 2500;
