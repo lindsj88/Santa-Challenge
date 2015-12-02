@@ -6,6 +6,9 @@
 package santachallenge.control;
 
 import exceptions.FeedSantaControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import santachallenge.SantaChallenge;
 
 /**
  *
@@ -13,6 +16,8 @@ import exceptions.FeedSantaControlException;
  */
 public class FeedSantaControl {
     private double total;
+    protected final BufferedReader keyboard = SantaChallenge.getInFile();
+    protected final PrintWriter console = SantaChallenge.getOutFile();
    
     public double IsSantaFull(double calories, double age) 
     throws FeedSantaControlException {
@@ -42,9 +47,10 @@ public class FeedSantaControl {
 
     public void display() {
         
-        System.out.println("Santa ate " + total + " calories");
+        this.console.println("Santa ate " + total + " calories");
     }
     //FoodItem[] foodItem = FeedSantaControl.createFoodList();
       //  game.setFoodItem(foodItem);
-    
+
+        
 }

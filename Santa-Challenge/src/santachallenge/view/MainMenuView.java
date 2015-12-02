@@ -5,7 +5,10 @@
  */
 package santachallenge.view;
 
+import exceptions.GameControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
 
@@ -28,46 +31,7 @@ public class MainMenuView extends View {
                + "\n----------------------------");
     }
     
-  /* public void displayMenu() {
-       
-       char selection = ' ';
-       do {
-           System.out.println(MENU);
-           
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           this.doAction(selection);
-           
-       }   while (selection != 'E');
-   }
-
-    private String getInput() {
-        
-        boolean valid = false; //if menu selection has been retrieved
-        char  selection = ' ';
-        String input= null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid) { //while valid menu selection hasnt been retrieved
-            
-            System.out.println("Please enter a menu selection:");
-            
-            //get menu selection from keyboard and trim off extra spaces
-            input = keyboard.nextLine();
-            input = input.trim();
-            selection = input.charAt(0);
-            
-            //if selection is invalid
-            if (selection != 'G' && selection != 'H' && selection != 'S' && selection != 'E') {
-                System.out.println("Invalid menu entry");
-                continue;
-            }
-            break;
-            }
-        return input;   
-    }
-    */
+  
     @Override
     public boolean doAction(Object obj) {
         
@@ -76,15 +40,20 @@ public class MainMenuView extends View {
         char selection = value.charAt(0);
         
         switch (selection){
-            case 'G': //start new game
-                this.startNewGame();
+            case 'G': {
+                try {
+                   this.startNewGame();  
+                } catch (GameControlException ex) {
+                    
+                }
+            }
+               
                 break;
             case 'C': //continue saved game
                 this.continueGame();
                 break;
             case 'H': //help menu
                 this.displayHelpMenu();
-                this.display();
                 break;
             case 'S': //save game
                 this.displaySaveGame();
@@ -92,22 +61,34 @@ public class MainMenuView extends View {
             case 'E': //exit
                 return true;
             default:
-                System.out.println("\n***Invalid Selection***");
+                ErrorView.display("MainMenuView",
+                        "***Invalid Selection***");
                 break;
         }
         return false;
     }
     
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
         GameControl.createNewGame(SantaChallenge.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
-        //System.out.println("*** continueGame function called***");
+        
     }
     
     private void continueGame() {
-        System.out.println("*** continueGame function called***");
+        this.console.println("\nEnter the file path where the game is saved");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.continueGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
     private void displayHelpMenu() {
@@ -117,6 +98,13 @@ public class MainMenuView extends View {
     }
     
     private void displaySaveGame() {
-         System.out.println("*** displaySaveGame function called***");
+         this.console.println("Enter the file path where the game will be saved");
+         String filePath = this.getInput();
+         
+         try {
+             GameControl.displaySaveGame(SantaChallenge.getCurrentGame(), filePath);
+         } catch (Exception ex) {
+             ErrorView.display("MainMenuView", ex.getMessage());
+         }
     }
 }

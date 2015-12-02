@@ -6,6 +6,9 @@
 package santachallenge.view;
 
 import exceptions.FlyingSpeedControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import santachallenge.SantaChallenge;
 import santachallenge.control.FlyingSpeedControl;
 
 /**
@@ -30,7 +33,8 @@ public class FlyingSpeedView extends View {
                + "\nE - Exit"
                + "\n----------------------------");
     }
-   
+   private final BufferedReader keyboard = SantaChallenge.getInFile();
+    private final PrintWriter console = SantaChallenge.getOutFile();
     
     @Override
     public boolean doAction(Object obj) {
@@ -54,7 +58,7 @@ public class FlyingSpeedView extends View {
              case 'E': //exit
                 return true;
             default:
-                System.out.println("\n***Invalid Selection***");
+                ErrorView.display(this.getClass().getName(),"Invalid Selection");
                 break;
         }
         return false;
@@ -68,9 +72,9 @@ public class FlyingSpeedView extends View {
         FlyingSpeedControl flyingControl = new FlyingSpeedControl();
         flyingControl.display();
     try {
-         speed = Double.parseDouble();
+        // speed = Double.parseDouble();
      } catch (NumberFormatException nf) {
-         System.out.println("\n You must enter a valid number");
+         ErrorView.display(this.getClass().getName(), "You must enter a valid selection");
      }
         return speed;
  }

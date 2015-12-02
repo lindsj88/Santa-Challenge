@@ -21,6 +21,7 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private InventoryItem[] inventoryItem;
+    private FoodItem[] foodItem;
     private Santa santa;
     public Scene[] getScenes;
     
@@ -84,6 +85,14 @@ public class Game implements Serializable{
         this.Santa = Santa;
     }
     private String[] Santa;
+
+    public FoodItem[] getFoodItem() {
+        return foodItem;
+    }
+
+    public void setFoodItem(FoodItem[] foodItem) {
+        this.foodItem = foodItem;
+    }
 
 
 

@@ -7,20 +7,14 @@ package santachallenge.view;
 
 import exceptions.FeedSantaControlException;
 import exceptions.FlyingSpeedControlException;
-import exceptions.MapControlException;
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import santachallenge.SantaChallenge;
 import santachallenge.control.GameControl;
-import santachallenge.control.MapControl;
 import santachallenge.model.Game;
-import santachallenge.model.Inventory;
 import santachallenge.model.InventoryItem;
 import santachallenge.model.Location;
 import santachallenge.model.Map;
-import santachallenge.model.Scene;
 /**
  *
  * @author Lindsey
@@ -43,47 +37,7 @@ public class GameMenuView extends View {
                + "\nE - Exit"
                + "\n----------------------------");
     }
-    
-    /* public void displayMenu() {
-        char selection = ' ';
-       do {
-           System.out.println(MENU);
-           
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           this.doAction(selection);
-           
-       }   while (selection != 'E');
-   }
-
-    private String getInput() {
-        
-        boolean valid = false; //if menu selection has been retrieved
-        char  selection = ' ';
-        String input= null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid) { //while valid menu selection hasnt been retrieved
-            
-            System.out.println("Please enter a menu selection:");
-            
-            //get menu selection from keyboard and trim off extra spaces
-            input = keyboard.nextLine();
-            input = input.trim();
-            selection = input.charAt(0);
-            
-            //if selection is invalid
-            if (selection != 'V' && selection != 'M' && selection != 'L'
-                    && selection != 'C' && selection != 'S' && selection != 'E') {
-                System.out.println("Invalid menu entry");
-                continue;
-            }
-            break;
-            }
-        return input;   
-    } */
-    
+   
     @Override
     public boolean doAction(Object obj) {
         String value = (String)obj;
@@ -126,7 +80,7 @@ public class GameMenuView extends View {
             case 'E': //exit
                 return true;
             default:
-                System.out.println("\n***Invalid Selection***");
+                this.console.println("\n***Invalid Selection***");
                 break;
         }
         return false;
@@ -141,27 +95,27 @@ public class GameMenuView extends View {
         Location[][] locations = map.getLocations();
         
         // Display title
-        System.out.println("\n Locations");
+        this.console.println("\n Locations");
         
         // Display map
-        System.out.println(" 1  2  3  4  5");
+        this.console.println(" 1  2  3  4  5");
         
         for (int i=0; i < rows; i++) {
-            System.out.println("--------------");
+            this.console.println("--------------");
             
             for (int j=0; j < columns; j++) {
-                System.out.print("  |  |  |  |  ");
+                this.console.print("  |  |  |  |  ");
                 
-                System.out.print(locations[i][j].getScene());
+                this.console.print(locations[i][j].getScene());
                 
                 if (locations[i][j].getVisited()) {
-                    System.out.print(" X ");
+                   this.console.print(" X ");
                 } else {
-                    System.out.print("  ");
+                    this.console.print("  ");
                 }
                 
             }
-            System.out.println("\n-------------");
+            this.console.println("\n-------------");
         }
 }
     
@@ -185,13 +139,13 @@ public class GameMenuView extends View {
         
        InventoryItem[] inventory = GameControl.getInventoryList();
         
-        System.out.println("\nInventory Items");
-        System.out.println("Description" + "\t" + 
+        this.console.println("\nInventory Items");
+        this.console.println("Description" + "\t" + 
                             "Required" + "\t" +
                             "In stock");
         
         for (InventoryItem inventoryItem : inventory) {
-            System.out.println(inventoryItem.getDescription() + "\t " +
+            this.console.println(inventoryItem.getDescription() + "\t " +
                     inventoryItem.getRequired() + "\t " +
                     inventoryItem.getQuantity());
         }
@@ -205,6 +159,7 @@ public class GameMenuView extends View {
         FeedSantaView feedSantaView = new FeedSantaView();
         feedSantaView.display();
     }
+    
      private void displayFlyingSpeedControl() throws FlyingSpeedControlException  {
         FlyingSpeedView flyingSpeedView = new FlyingSpeedView();
         flyingSpeedView.display();

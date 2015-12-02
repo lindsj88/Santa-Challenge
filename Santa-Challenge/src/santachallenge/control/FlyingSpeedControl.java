@@ -5,6 +5,9 @@
  */
 package santachallenge.control;
 import exceptions.FlyingSpeedControlException;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import santachallenge.SantaChallenge;
 
 /**
  *
@@ -12,6 +15,8 @@ import exceptions.FlyingSpeedControlException;
  */
 public class FlyingSpeedControl {
     private double total;
+    protected final BufferedReader keyboard = SantaChallenge.getInFile();
+    protected final PrintWriter console = SantaChallenge.getOutFile();
     public double FlyingSpeed (double speed) 
     throws FlyingSpeedControlException {
         
@@ -34,6 +39,6 @@ public class FlyingSpeedControl {
     }
       public void display() {
         
-        System.out.println("Santa flew around the world in " + total);
+        this.console.println("Santa flew around the world in " + total);
     }
 }

@@ -46,56 +46,7 @@ public class MapView extends View{
                + "\n----------------------------");
      }
     
-   /* public void displayMenu() {
-        char selection = ' ';
-       do {
-           System.out.println(MENU);
-           
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           this.doAction(selection);
-           
-       }   while (selection != 'Z');
-   }
 
-    private String getInput() {
-        
-        boolean valid = false; //if menu selection has been retrieved
-        char  selection = ' ';
-        String input= null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid) { //while valid menu selection hasnt been retrieved
-            
-            System.out.println("Please enter a menu selection:");
-            
-            //get menu selection from keyboard and trim off extra spaces
-            input = keyboard.nextLine();
-            input = input.trim();
-            selection = input.charAt(0);
-            
-            //if selection is invalid
-            if (selection != 'A' && selection != 'B' && selection != 'C' 
-                    && selection != 'D' && selection != 'Z' 
-                    && selection != 'F' && selection != 'G' 
-                    && selection != 'H' && selection != 'I'
-                    && selection != 'J' && selection != 'K' 
-                    && selection != 'L' && selection != 'M' 
-                    && selection != 'N' && selection != 'O'
-                    && selection != 'P' && selection != 'Q' 
-                    && selection != 'R' && selection != 'S' 
-                    && selection != 'T' && selection != 'U'
-                    && selection != 'V' && selection != 'W' 
-                    && selection != 'X'
-                            && selection != 'Y') {
-                System.out.println("Invalid menu entry");
-                continue;
-            }
-            break;
-            }
-        return input;   
-    } */
     
     @Override
     public boolean doAction(Object obj) {
@@ -182,7 +133,8 @@ public class MapView extends View{
             case 'E': //exit
                 return true;
             default:
-                System.out.println("\n Invalid Selection, please try again");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Selection, please try again");
                 break;
         }
         return false;
@@ -190,103 +142,103 @@ public class MapView extends View{
     
  
     private void displayNorthPole() { 
-            System.out.println("You are now back at the North Pole");
+            this.console.println("You are now back at the North Pole");
         
     }
 
     private void displayLA() {
-        System.out.println("You are now in Los Angeles California USA");
+        this.console.println("You are now in Los Angeles California USA");
     }
 
     private void displaySeattle() {
-        System.out.println("You are now in Seattle Washington, USA");
+        this.console.println("You are now in Seattle Washington, USA");
     }
 
     private void displayOttawa() {
-        System.out.println("You are now in Ottawa, Canada");
+        this.console.println("You are now in Ottawa, Canada");
     }
 
     private void displayAnchorage() {
-        System.out.println("You are now in Anchorage, Alaska");
+        this.console.println("You are now in Anchorage, Alaska");
     }
 
     private void displayMexico() {
-        System.out.println("You are now in Mexico City, Mexico");
+        this.console.println("You are now in Mexico City, Mexico");
     }
 
     private void displayBrazil() {
-        System.out.println("You are now in Sao Paulo, Brazil");
+       this.console.println("You are now in Sao Paulo, Brazil");
     }
 
     private void displayChile() {
-        System.out.println("You are now in Santiago, Chile");
+        this.console.println("You are now in Santiago, Chile");
     }
 
     private void displayArgentina() {
-        System.out.println("You are now in Buenas Aires, Argentina");
+        this.console.println("You are now in Buenas Aires, Argentina");
     }
 
     private void displayColumbia() {
-        System.out.println("You are now in Bogota, Columbia");
+        this.console.println("You are now in Bogota, Columbia");
     }
 
     private void displaySouthAfrica() {
-        System.out.println("You are now back in Cape Town, South Africa");
+        this.console.println("You are now back in Cape Town, South Africa");
     }
 
     private void displayKenya() {
-        System.out.println("You are now in Nairobi, Kenya");
+        this.console.println("You are now in Nairobi, Kenya");
     }
 
     private void displayNigeria() {
-        System.out.println("You are now in Lagos, Nigeria");
+        this.console.println("You are now in Lagos, Nigeria");
     }
 
     private void displayMorocco() {
-        System.out.println("You are now in Casablanca, Morocco");
+        this.console.println("You are now in Casablanca, Morocco");
     }
 
     private void displayRussia() {
-        System.out.println("You are now in Moscow, Russia");
+        this.console.println("You are now in Moscow, Russia");
     }
 
     private void displayEngland() {
-        System.out.println("You are now in London, England");
+        this.console.println("You are now in London, England");
     }
 
     private void displaySpain() {
-        System.out.println("You are now in Madrid, Spain");
+        this.console.println("You are now in Madrid, Spain");
     }
 
     private void displayCzechRepublic() {
-        System.out.println("You are now in Prague, Czech Republic");
+        this.console.println("You are now in Prague, Czech Republic");
     }
 
     private void displayIndia() {
-       System.out.println("You are now in Mumbai, India");
+       this.console.println("You are now in Mumbai, India");
     }
 
     private void displayChina() {
-        System.out.println("You are now in Hong Kong, China");
+        this.console.println("You are now in Hong Kong, China");
     }
 
     private void displayMongolia() {
-        System.out.println("You are now in Ulaanbaatar, Mongolia");
+        this.console.println("You are now in Ulaanbaatar, Mongolia");
     }
 
     private void displayThailand() {
-        System.out.println("You are now in Bangkok, Thailand");
+        this.console.println("You are now in Bangkok, Thailand");
     }
 
     private void displayAustrailia() {
-        System.out.println("You are now in Perth, Austrailia");
+        this.console.println("You are now in Perth, Austrailia");
     }
 
     private void displayMelbourne() {
-        System.out.println("You are now in Melbourne, Australia");
+        this.console.println("You are now in Melbourne, Australia");
     }
 
     private void displayBrisbane() {
-        System.out.println("You are now in Brisbane, Autralia");
+        this.console.println("You are now in Brisbane, Autralia");
     }
 }

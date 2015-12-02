@@ -5,9 +5,15 @@
  */
 package santachallenge.control;
 
+import exceptions.GameControlException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import santachallenge.SantaChallenge;
 import santachallenge.model.Game;
-import santachallenge.model.Inventory;
 import santachallenge.model.InventoryItem;
 import santachallenge.model.Item;
 import santachallenge.model.Map;
@@ -20,7 +26,7 @@ import santachallenge.model.Sleigh;
  */
 public class GameControl {
    
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException {
         
         Game game = new Game();
         SantaChallenge.setCurrentGame(game);
@@ -36,9 +42,13 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         
-        //MapControl.moveActorsToStartingLocation(map);
+        MapControl.moveSantaToStartingLocation(map);
+        
+        FoodItem[] foodItem = GameControl.createFoodList();
+        game.setFoodItem(foodItem);
         
     }
+    
         public static InventoryItem[] createInventoryList() {
             InventoryItem[] inventory = new InventoryItem[6];
             
@@ -102,9 +112,58 @@ public class GameControl {
             }
             return inventoryList;
         }
+        
+           public static FoodItem[] getInsertionSortedFoods() {
+         
+         FoodItem[] originalFoodList = SantaChallenge.getCurrentGame.getFoodItem();
+         FoodItem[] foodList = originalFoodList.clone();
+         FoodItem tempFoodList;
+  
+       for(int i = 0; i < foodList.length-1; i++) {
+          for (int j = 0; j < foodList.length-1-i; j++){
+             if(foodList[j].getDescription().compareToIgnoreCase(foodList[j+1].getDescription()) > 0) {
+               tempFoodList = foodList[j];
+             foodList[j] = foodList[j+1];
+           foodList[j+1] = tempFoodList;
+      }
+      }
+      }
+      return foodList;  
+}
 
     public static InventoryItem[] getInventoryList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+
+    
+    public static void displaySaveGame(Game currentGame, String filePath) throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);
+        } catch(IOException e) {
+                throw new GameControlException(e.getMessage());
+        }
+    }
         
+
+    public static void continueGame(String filePath) throws GameControlException {
+       
+        Game game = null;
+       
+       try (FileInputStream fips = new FileInputStream(filePath)) {
+           ObjectInputStream output = new ObjectInputStream(fips);
+           
+           game = (Game) output.readObject();
+    }
+       catch (FileNotFoundException fnfe) {
+           throw new GameControlException(fnfe.getMessage());
+       } catch(Exception e) {
+           throw new GameControlException(e.getMessage());
+       }
+       
+       SantaChallenge.setCurrentGame(game);
+    }
+
 }

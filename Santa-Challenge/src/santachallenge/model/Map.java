@@ -6,7 +6,7 @@
 package santachallenge.model;
 
 import java.io.Serializable;
-import java.util.Objects;
+import santachallenge.view.ErrorView;
 
 /**
  *
@@ -25,7 +25,8 @@ public class Map implements Serializable {
     public Map(int rows, int columns) {
     
         if (rows < 0 || columns < 0) {
-            System.out.println("Not a valid location");
+            ErrorView.display(this.getClass().getName(),
+                    "Not a valid location");
             return;
         }
         
