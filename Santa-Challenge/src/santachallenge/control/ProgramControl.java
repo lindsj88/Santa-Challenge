@@ -5,6 +5,7 @@
  */
 package santachallenge.control;
 
+import exceptions.ProgramControlException;
 import santachallenge.SantaChallenge;
 import santachallenge.model.Player;
 
@@ -14,13 +15,15 @@ import santachallenge.model.Player;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) throws ProgramControlException{
         if (name == null) {
-        return null;
-    }
+        throw new ProgramControlException("Please enter your name");
+        
+    } else {
         Player player = new Player ();
         player.setName(name);
         SantaChallenge.setPlayer (player);
         return player;
+    }
     }
 }

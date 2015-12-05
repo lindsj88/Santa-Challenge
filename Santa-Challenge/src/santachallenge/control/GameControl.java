@@ -138,7 +138,8 @@ public class GameControl {
 
     
     public static void displaySaveGame(Game currentGame, String filePath) throws GameControlException {
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+       Game game = null;
+       try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             
             output.writeObject(currentGame);
