@@ -182,7 +182,6 @@ public class GameMenuView extends View {
         InventoryReportView inventoryReport = new InventoryReportView();
         inventoryReport.display();
         
-        FileWriter.writeInventory(locationOfFile);
     }
 
     private static class map {
