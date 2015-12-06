@@ -29,6 +29,9 @@ public class StartProgramView {
         //Display the banner screen
         this.displayBanner();
         
+        String playersName = this.getPlayersName();
+        
+        Player player = ProgramControl.createPlayer(playersName);
         //display welcome message
         this.displayWelcomeMessage(player);
         
@@ -76,7 +79,7 @@ public class StartProgramView {
         return playersName;
         }
     
-    Player player = ProgramControl.createPlayer(playersName);
+ 
     
 
 

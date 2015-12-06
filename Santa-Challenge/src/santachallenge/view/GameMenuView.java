@@ -7,6 +7,7 @@ package santachallenge.view;
 
 import exceptions.FeedSantaControlException;
 import exceptions.FlyingSpeedControlException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import santachallenge.SantaChallenge;
@@ -34,6 +35,7 @@ public class GameMenuView extends View {
                + "\nC - Choose Santa's Partner"
                + "\nF - Feed Santa"
                + "\nZ - Flying speed"
+               + "\nA - View Inventory Report"
                + "\nE - Exit"
                + "\n----------------------------");
     }
@@ -60,6 +62,8 @@ public class GameMenuView extends View {
              case 'C': //choose santa
                 this.displayChooseSanta();
                 break;
+            case 'A':
+                 this.viewReport();
                  case 'Z': {
             try {
                 //choose santa
@@ -165,6 +169,18 @@ public class GameMenuView extends View {
         flyingSpeedView.display();
     }
 
+    private void viewReport() {
+        String locationOfFile = null;
+        this.console.println("Enter the file path where "
+                + "you'd like the report to be printed. ");
+        
+        String filePath = this.getInput();
+        
+        locationOfFile = this.getInput();
+        
+        PrintWriter.writeInventory(locationOfFile);
+    }
+
     private static class map {
 
         private static Location[][] getLocations() {
@@ -177,5 +193,5 @@ public class GameMenuView extends View {
     }
 
    
-}
+}*/
     

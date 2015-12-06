@@ -16,5 +16,4 @@ public enum Item {
     hotChocolate,
     gps,
     gloves;
-    
 }

@@ -15,9 +15,9 @@ import santachallenge.model.Player;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String name) throws ProgramControlException{
+    public static Player createPlayer(String name){
         if (name == null) {
-        throw new ProgramControlException("Please enter your name");
+       return null;
         
     } else {
         Player player = new Player ();

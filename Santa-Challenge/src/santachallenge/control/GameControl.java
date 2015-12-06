@@ -26,14 +26,14 @@ import santachallenge.model.Sleigh;
  */
 public class GameControl {
    
-    public static void createNewGame(Player player) throws GameControlException {
+    public static void createNewGame(Player player) {
         
         Game game = new Game();
         SantaChallenge.setCurrentGame(game);
         
         game.setPlayer(player);
         
-        InventoryItem[] inventoryItem = GameControl.createInventoryList();
+       InventoryItem[] inventoryItem = GameControl.createInventoryList();
         game.setInventoryItem(inventoryItem);
         
         Sleigh sleigh = new Sleigh();
@@ -112,28 +112,53 @@ public class GameControl {
             }
             return inventoryList;
         }
-        
-           public static FoodItem[] getInsertionSortedFoods() {
-         
-         FoodItem[] originalFoodList = SantaChallenge.getCurrentGame.getFoodItem();
-         FoodItem[] foodList = originalFoodList.clone();
-         FoodItem tempFoodList;
-  
-       for(int i = 0; i < foodList.length-1; i++) {
-          for (int j = 0; j < foodList.length-1-i; j++){
-             if(foodList[j].getDescription().compareToIgnoreCase(foodList[j+1].getDescription()) > 0) {
-               tempFoodList = foodList[j];
-             foodList[j] = foodList[j+1];
-           foodList[j+1] = tempFoodList;
-      }
-      }
-      }
-      return foodList;  
-}
 
-    public static InventoryItem[] getInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   // public static InventoryItem[] getInventoryList() {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+
+    //public static void saveReport(Game currentGame, String filePath) {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
+        
+        public enum Food {
+        bacon,
+        steak,
+        oatmeal,
+        banana;
     }
+           public static FoodItem[] createFoodList() {
+            FoodItem[] foodItem = new FoodItem[6];
+                
+  /* 2 pieces of pizza"
+               + "\nB - 12 slices of bacon"
+               + "\nS - 1 steak"
+               + "\nO - 1 big bowl of oatmeal"
+               + "\nY - Yogurt and a banana"
+                       */
+            FoodItem bacon = new FoodItem();
+            bacon.setDescription("bacon");
+            bacon.setCalories(0);
+            foodItem[Food.bacon.ordinal()] = bacon;
+            
+            FoodItem steak = new FoodItem();
+            steak.setDescription("steak");
+            steak.setCalories(0);
+            foodItem[Food.steak.ordinal()] = steak;
+            
+            FoodItem oatmeal = new FoodItem();
+            oatmeal.setDescription("oatmeal");
+            oatmeal.setCalories(0);
+            foodItem[Food.oatmeal.ordinal()] = oatmeal;
+            
+            FoodItem banana = new FoodItem();
+            banana.setDescription("banana");
+            banana.setCalories(0);
+            foodItem[Food.banana.ordinal()] = banana;
+                      
+            return foodItem;
+            
+        }
     
 
     

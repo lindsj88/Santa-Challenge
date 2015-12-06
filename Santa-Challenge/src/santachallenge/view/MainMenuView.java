@@ -40,14 +40,8 @@ public class MainMenuView extends View {
         char selection = value.charAt(0);
         
         switch (selection){
-            case 'G': {
-                try {
-                   this.startNewGame();  
-                } catch (GameControlException ex) {
-                    
-                }
-            }
-               
+            case 'G':
+                this.startNewGame();  
                 break;
             case 'C': //continue saved game
                 this.continueGame();
@@ -68,7 +62,8 @@ public class MainMenuView extends View {
         return false;
     }
     
-    private void startNewGame() throws GameControlException {
+    private void startNewGame() {
+        
         GameControl.createNewGame(SantaChallenge.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();

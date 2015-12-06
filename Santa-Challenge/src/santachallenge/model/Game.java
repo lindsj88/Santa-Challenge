@@ -138,4 +138,8 @@ public class Game implements Serializable{
     public Scene getScene() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    //public void setFoodItem(santachallenge.model.FoodItem[] foodItem) {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 }
