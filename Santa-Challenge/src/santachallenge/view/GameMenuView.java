@@ -7,6 +7,7 @@ package santachallenge.view;
 
 import exceptions.FeedSantaControlException;
 import exceptions.FlyingSpeedControlException;
+import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -178,7 +179,10 @@ public class GameMenuView extends View {
         
         locationOfFile = this.getInput();
         
-        PrintWriter.writeInventory(locationOfFile);
+        InventoryReportView inventoryReport = new InventoryReportView();
+        inventoryReport.display();
+        
+        FileWriter.writeInventory(locationOfFile);
     }
 
     private static class map {
@@ -193,5 +197,5 @@ public class GameMenuView extends View {
     }
 
    
-}*/
+}
     

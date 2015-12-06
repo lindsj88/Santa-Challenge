@@ -33,7 +33,7 @@ public class GameControl {
         
         game.setPlayer(player);
         
-       InventoryItem[] inventoryItem = GameControl.createInventoryList();
+        InventoryItem[] inventoryItem = GameControl.createInventoryList();
         game.setInventoryItem(inventoryItem);
         
         Sleigh sleigh = new Sleigh();
