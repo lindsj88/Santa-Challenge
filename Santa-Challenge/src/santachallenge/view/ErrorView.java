@@ -15,6 +15,7 @@ import santachallenge.SantaChallenge;
 public class ErrorView {
     private static final PrintWriter errorFile = SantaChallenge.getOutFile();
     private static final PrintWriter logFile = SantaChallenge.getLogFile();
+    
     public static void display (String className, String errorMessage){
         errorFile.println(
          "-----------------------------------------------------------------"

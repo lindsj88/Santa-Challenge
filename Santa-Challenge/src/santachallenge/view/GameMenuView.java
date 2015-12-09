@@ -67,7 +67,7 @@ public class GameMenuView extends View {
                  this.viewReport();
                  case 'Z': {
             try {
-                //choose santa
+                //santa
                 this.displayFlyingSpeedControl();
             } catch (FlyingSpeedControlException ex) {
                 Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
@@ -155,8 +155,7 @@ public class GameMenuView extends View {
                     inventoryItem.getQuantity());
         }
     }
-        //System.out.println("*** displaySelectInventory function called***");
-       /* SelectInventoryView inventoryMenu = new SelectInventoryView();
+               /* SelectInventoryView inventoryMenu = new SelectInventoryView();
         inventoryMenu.display();
     }*/
 
@@ -184,17 +183,14 @@ public class GameMenuView extends View {
         
     }
 
-    private static class map {
+//    private static class map {
 
-        private static Location[][] getLocations() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+      //  private static Location[][] getLocations() {
+        //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //}
 
-        public map() {
+        //public map() {
             
-        }
+        //}
     }
-
-   
-}
     

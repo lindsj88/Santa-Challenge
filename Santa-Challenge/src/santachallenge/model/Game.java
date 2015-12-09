@@ -128,18 +128,18 @@ public class Game implements Serializable{
     } 
 
     public void setInventory(InventoryControl[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // this.console.println("inventory called");
     }
 
     public void setMap(santachallenge.model.Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
-    public Scene getScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void getScene() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    //public void setFoodItem(santachallenge.model.FoodItem[] foodItem) {
+   // public void setFoodItem(santachallenge.model.FoodItem[] foodItem) {
       //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     //}
 }

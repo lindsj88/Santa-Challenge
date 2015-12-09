@@ -60,22 +60,22 @@ public class SelectInventoryView extends View{
     }
 
     private void displayGetCookie() {
-        System.out.println("*** displayGetCookie function called***");
+        this.console.println("*** displayGetCookie function called***");
     }
 
     private void displayGetHat() {
-         System.out.println("*** displayGetHat function called***");
+        this.console.println("*** displayGetHat function called***");
     }
 
     private void displayGetGPS() {
-         System.out.println("*** displayGetGPS function called***");
+         this.console.println("*** displayGetGPS function called***");
     }
 
     private void displayGetGoggles() {
-         System.out.println("*** displayGetGoggles function called***");
+         this.console.println("*** displayGetGoggles function called***");
     }
 
     private void displayGetHotChocolate() {
-         System.out.println("*** displayGetHotChocolate function called***");
+         this.console.println("*** displayGetHotChocolate function called***");
     }
 }

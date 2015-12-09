@@ -10,7 +10,8 @@ import santachallenge.SantaChallenge;
 /**
  *
  * @author Lindsey
- 
+ */
+
 public class FoodItem {
  
      public static FoodItem[] getInsertionSortedFoods() {
@@ -49,4 +50,3 @@ public class FoodItem {
     }
 
 }
-*/

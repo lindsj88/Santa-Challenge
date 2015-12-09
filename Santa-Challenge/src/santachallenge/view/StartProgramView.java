@@ -8,7 +8,6 @@ package santachallenge.view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 import santachallenge.SantaChallenge;
 import santachallenge.control.ProgramControl;
 import santachallenge.model.Player;
@@ -26,22 +25,31 @@ public class StartProgramView {
    
     public void startProgram(){
         
+        
+        String playersName;
+         playersName = this.getPlayersName();
+        
+        Player player = ProgramControl.createPlayer(playersName);
+        
         //Display the banner screen
         this.displayBanner();
         
-        String playersName = this.getPlayersName();
-        
-        Player player = ProgramControl.createPlayer(playersName);
         //display welcome message
         this.displayWelcomeMessage(player);
+        
         
         //display main menu
         MainMenuView mainMenu = new MainMenuView ();
         mainMenu.display();
+        
+        
     }
 
     private void displayBanner() {
-        this.console.println("* This game is a Christmas themed text based role playing game. In this game you will be taking on the very important role of Santa Claus. It is a very big day in the North Pole, it’s the morning of Christmas Eve and the workshop is bustling.*");
+        this.console.println("* This game is a Christmas themed text based role playing game. "
+                + "\n In this game you will be taking on the very important role of Santa     "
+                + "\n Claus. It is a very big day in the North Pole, it’s the morning of       "
+                + "\n Christmas Eve and the workshop is bustling.                             ");
                 
         this.console.println("* Your first task is to help Santa prepare himself, and his belongings, for the day. What type of food should he eat for the journey? Once Santa is ready, you can move along to things like choosing how many reindeer pull the sleigh and how many presents you can take.  \n" +
 "The final and most important job that you will have is making sure the presents get delivered to the right children, at the right houses.  Throughout your journey there are many friends and treasures to be found. Choose your own delivery route, but be careful not to let Santa or his reindeer get too tired, or you may be stuck somewhere you*");
@@ -49,7 +57,7 @@ public class StartProgramView {
         this.console.println("*At the end of your journey fly your sleigh back to the North Pole and check in with Mrs. Claus.*");
     }
         //prompt player to enter name
-        String playersName = this.getPlayersName ();
+        //String playersName = this.getPlayersName ();
 
     
 
