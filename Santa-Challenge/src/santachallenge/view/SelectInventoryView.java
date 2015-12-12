@@ -60,7 +60,7 @@ public class SelectInventoryView extends View{
     }
 
     private void displayGetCookie() {
-        this.console.println("*** displayGetCookie function called***");
+        this.console.println("");
     }
 
     private void displayGetHat() {

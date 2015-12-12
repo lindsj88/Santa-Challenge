@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import santachallenge.SantaChallenge;
+import santachallenge.model.FoodItem;
 import santachallenge.model.Game;
 import santachallenge.model.InventoryItem;
 import santachallenge.model.Item;
@@ -42,7 +43,7 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap(map);
         
-        MapControl.moveSantaToStartingLocation(map);
+        //MapControl.moveSantaToStartingLocation(map);
         
         FoodItem[] foodItem = GameControl.createFoodList();
         game.setFoodItem(foodItem);

@@ -327,7 +327,18 @@ public class MapControl {
       return sceneList;  
      }
 
-    static void moveSantaToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public static void setLocation(Santa santa, Point coordinates) throws MapControlException {
+        Map map = (Map) SantaChallenge.getCurrentGame().getMap();
+        
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
+        
+        if (newRow < 0 || newRow >= map.getRows() || newColumn < 0 || newColumn >= map.getColumns()) {
+            throw new MapControlException("Invalid location "
+                                            + coordinates.y + ", " + coordinates.x
+                                            + " the selected location is outside"
+                                            + " he map.");
     }
+}
 }

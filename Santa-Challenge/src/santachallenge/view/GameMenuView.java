@@ -137,6 +137,7 @@ public class GameMenuView extends View {
     }
     
     private void displayChooseSanta() {
+        
          System.out.println("*** displayChooseSanta function called***");
     }
 

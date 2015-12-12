@@ -9,7 +9,7 @@ package santachallenge.model;
  *
  * @author Lindsey
  */
-class FoodItem {
+public class FoodItem {
     private String description;
     private int calories;
 

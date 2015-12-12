@@ -71,14 +71,12 @@ public class Player implements Serializable {
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
 
-    public void setPlayerName(String jordan) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   // public void setPlayerName(String jordan) {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 
-    public void setTime(double d) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    //public void setTime(double d) {
+     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
     
 }

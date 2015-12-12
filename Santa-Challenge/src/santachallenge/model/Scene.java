@@ -47,7 +47,7 @@ private int travelTime;
 private int distance;
 
 public Scene() {
-throw new UnsupportedOperationException("Not supported yet.");
+//throw new UnsupportedOperationException("Not supported yet.");
 }
 
     public String getDescription() {

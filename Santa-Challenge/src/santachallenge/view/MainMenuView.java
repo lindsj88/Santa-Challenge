@@ -63,9 +63,8 @@ public class MainMenuView extends View {
     }
     
     private void startNewGame() {
-        
         GameControl.createNewGame(SantaChallenge.getPlayer());
-        
+    
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
