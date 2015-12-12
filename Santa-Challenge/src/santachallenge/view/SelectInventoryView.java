@@ -14,7 +14,7 @@ public class SelectInventoryView extends View{
     public SelectInventoryView() {
         super ("\n"
                + "\n----------------------------"
-               + "\n         Select a Resource Menu          "
+               + "\n  Select a Resource Menu    "
                + "\n----------------------------"
                + "\nH - Hat"
                + "\nC - Cookies"

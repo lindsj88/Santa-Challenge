@@ -82,4 +82,8 @@ public class Sleigh implements Serializable{
         return "Sleigh{" + "speed=" + speed + ", weight=" + weight + ", number of presents=" + numberOfPresents + '}';
     }
 
+    public void setReindeer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

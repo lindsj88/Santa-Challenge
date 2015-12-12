@@ -41,7 +41,7 @@ public class GameControl {
         game.setSleigh(sleigh);
         
         Map map = MapControl.createMap();
-        game.setMap(map);
+        game.setMap();
         
         //MapControl.moveSantaToStartingLocation(map);
         
@@ -114,13 +114,6 @@ public class GameControl {
             return inventoryList;
         }
 
-   // public static InventoryItem[] getInventoryList() {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
-   // public static InventoryItem[] getInventoryList() {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
 
         
         public enum Food {

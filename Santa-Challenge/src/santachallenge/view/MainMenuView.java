@@ -63,6 +63,7 @@ public class MainMenuView extends View {
     }
     
     private void startNewGame() {
+        
         GameControl.createNewGame(SantaChallenge.getPlayer());
     
         GameMenuView gameMenu = new GameMenuView();
@@ -71,7 +72,7 @@ public class MainMenuView extends View {
     }
     
     private void continueGame() {
-        this.console.println("\nEnter the file path where the game is saved");
+        this.console.println("\nEnter the file name where the game is saved");
         
         String filePath = this.getInput();
         
@@ -92,7 +93,7 @@ public class MainMenuView extends View {
     }
     
     private void displaySaveGame() {
-         this.console.println("Enter the file path where the game will be saved");
+         this.console.println("Enter the file name to save your game");
          String filePath = this.getInput();
          
          try {

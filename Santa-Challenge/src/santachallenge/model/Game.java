@@ -65,8 +65,12 @@ public class Game implements Serializable{
         return map;
     }
 
-    public void setMap(Map map) {
-        this.map = map;
+   // public void setMap(Map map) {
+     //   this.map = map;
+    //}
+      public void setMap() {
+          this.map = map;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public InventoryItem[] getInventoryItem() {
@@ -94,6 +98,15 @@ public class Game implements Serializable{
         this.foodItem = foodItem;
     }
 
+    public Scene[] getGetScenes() {
+        return getScenes;
+    }
+
+    public void setGetScenes(Scene[] getScenes) {
+        this.getScenes = getScenes;
+    }
+
+    
 
 
     @Override
@@ -127,19 +140,4 @@ public class Game implements Serializable{
         return "Game{" + "time=" + time + ", playerName=" + playerName + '}';
     } 
 
-    public void setInventory(InventoryControl[] inventoryList) {
-       // this.console.println("inventory called");
-    }
-
-    public void setMap(santachallenge.model.Map map) {
-        
-    }
-
-    public void getScene() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   // public void setFoodItem(santachallenge.model.FoodItem[] foodItem) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
 }

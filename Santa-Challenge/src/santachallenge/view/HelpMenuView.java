@@ -49,7 +49,7 @@ public class HelpMenuView extends View{
     }
     
     private void displayHowToWin() {
-        this.console.println("Help Santa deliver all the presents!");
+        this.console.println("Help Santa deliver all the presents before he runs out of time!");
     }
     
     private void displayMap() {
