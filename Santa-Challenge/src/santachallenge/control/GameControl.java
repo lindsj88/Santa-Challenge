@@ -6,6 +6,7 @@
 package santachallenge.control;
 
 import exceptions.GameControlException;
+import exceptions.MapControlException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,7 +28,7 @@ import santachallenge.model.Sleigh;
  */
 public class GameControl {
    
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         
         Game game = new Game();
         SantaChallenge.setCurrentGame(game);
@@ -43,7 +44,7 @@ public class GameControl {
         Map map = MapControl.createMap();
         game.setMap();
         
-        //MapControl.moveSantaToStartingLocation(map);
+        MapControl.moveSantaToStart(map);
         
         FoodItem[] foodItem = GameControl.createFoodList();
         game.setFoodItem(foodItem);

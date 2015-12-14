@@ -29,7 +29,7 @@ public abstract class View implements ViewInterface {
     
     @Override
    public void display() {
-       String value;
+       String value = "";
        boolean done = false;
        
        do {

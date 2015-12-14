@@ -42,7 +42,7 @@ public class Scene {
     finish("You made it! Congratulations");
    */ 
 private String description;
-private Point coordinates;
+//private Point coordinates;
 private int travelTime;
 private int distance;
 
@@ -58,13 +58,13 @@ public Scene() {
         this.description = description;
     }
 
-    public Point getCoordinates() {
-        return coordinates;
-    }
+   // public Point getCoordinates() {
+    //    return coordinates;
+    //}
 
-    public void setCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
-    }
+    //public void setCoordinates(Point coordinates) {
+    //    this.coordinates = coordinates;
+    //}
 
     public int getTravelTime() {
         return travelTime;
@@ -81,19 +81,6 @@ public Scene() {
     public void setDistance(int distance) {
         this.distance = distance;
     }
-
-    public void setCoordinates() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setTime() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
  
     
     public enum SceneType {

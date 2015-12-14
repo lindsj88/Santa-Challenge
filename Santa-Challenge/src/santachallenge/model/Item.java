@@ -10,10 +10,5 @@ package santachallenge.model;
  * @author Lindsey
  */
 public enum Item {
-    hat,
-    cookies,
-    goggles,
-    hotChocolate,
-    gps,
-    gloves;
+    hat, cookies, goggles, hotChocolate, gps, gloves;
 }

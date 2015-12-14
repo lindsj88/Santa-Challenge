@@ -6,6 +6,7 @@
 package santachallenge.view;
 
 import exceptions.GameControlException;
+import exceptions.MapControlException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +33,7 @@ public class MainMenuView extends View {
     }
     
   
-    @Override
+   @Override
     public boolean doAction(Object obj) {
         
         String value = (String) obj;
@@ -62,16 +63,26 @@ public class MainMenuView extends View {
         return false;
     }
     
-    private void startNewGame() {
-        
+    private void startNewGame() throws MapControlException{
+        try {
         GameControl.createNewGame(SantaChallenge.getPlayer());
-    
+        } catch (MapControlException) {
+            this.console.println(mce.getMessage());
+            return;
+        } catch (Exception e) {
+            this.console.println(e.getMessage());
+            e.printStackTrace();
+            return;
+        } finally {
+            System.out.close();
+        }
+        
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         
     }
     
-    private void continueGame() {
+    private void continueGame() throws GameControlException {
         this.console.println("\nEnter the file name where the game is saved");
         
         String filePath = this.getInput();

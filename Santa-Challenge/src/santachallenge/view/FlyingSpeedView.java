@@ -72,7 +72,7 @@ public class FlyingSpeedView extends View {
         FlyingSpeedControl flyingControl = new FlyingSpeedControl();
         flyingControl.display();
     try {
-        // speed = Double.parseDouble();
+        //speed = Double.parseDouble();
      } catch (NumberFormatException nf) {
          ErrorView.display(this.getClass().getName(), "You must enter a valid selection");
      }

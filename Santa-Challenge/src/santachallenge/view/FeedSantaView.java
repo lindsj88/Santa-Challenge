@@ -5,6 +5,7 @@
  */
 package santachallenge.view;
 
+import exceptions.FeedSantaControlException;
 import santachallenge.control.FeedSantaControl;
 
 /**
@@ -13,7 +14,7 @@ import santachallenge.control.FeedSantaControl;
  */
 public class FeedSantaView extends View {
     
-    public FeedSantaView() {
+    public FeedSantaView() throws FeedSantaControlException{
         
         super ("\n"
                + "\n----------------------------"
